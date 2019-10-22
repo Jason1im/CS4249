@@ -1,10 +1,13 @@
-var x = "hello";
 
-console.log(x);
+// pseudo code
+// functions in here are to be implemented
+function recordAnswer() {
 
-document.dispatchEvent(new CustomEvent('log', {
-    detail: {
-        eventName: 'myevent',
-        info: { key1: val1, key2: val2 }
+    var userInputs = gatherInputs();
+    var pass = checkAnswer(userInputs);
+    if (pass) {
+        stopTimer();
+        recordLogs();
+        moveToNextStep();
     }
-}));
+}
