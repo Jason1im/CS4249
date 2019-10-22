@@ -179,23 +179,25 @@ return {
 //
 /////////////////////////////////////////////////////////////////////////////
 
+// submits to the google form at this URL:
+// docs.google.com/forms/d/e/1FAIpQLScO9eSAfZ-pTZsUihSfBH-hMTqwCW17TNKc5esCMG6gfFITYg/viewform?usp=sf_link
 function sendNetworkLog(
     uid,
     time,
-    eventName,
+    eventname,
     target,
     info,
     state,
-    log_version) {
-  var formid = "e/1FAIpQLScblldacOf3-BnDYM1FlVEL60PHs_x8_2yoqwLNVqmNarzX7A";
+    version) {
+  var formid = "e/1FAIpQLScO9eSAfZ-pTZsUihSfBH-hMTqwCW17TNKc5esCMG6gfFITYg";
   var data = {
-    "entry.1213174370": uid,
-    "entry.1557365071": time,
-    "entry.2063334899": eventName,
-    "entry.787942568": target,
-    "entry.251233848": info,
-    "entry.94462225": state,
-    "entry.1473081078": log_version
+    "entry.737855329": uid,
+    "entry.1133665943": time,
+    "entry.1847236472": eventname,
+    "entry.1862462055": target,
+    "entry.374115865": info,
+    "entry.56371307": state,
+    "entry.1592726850": version
   };
   var params = [];
   for (key in data) {
