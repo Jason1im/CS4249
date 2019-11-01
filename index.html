@@ -21,40 +21,64 @@
         <a style="margin-left: 10px">Manage Booking</a>
     </div>
     <div class="main-body border"> 
-        <div id="search-box" class=" border">
+        <div id="search-box" class="border">
                 <div class="block-header"  style="display: inline-flex;"> 
                     <p>New Booking</p>
                     <a href="#">Save Preference</a>
                 </div>
-                <div id="question1">
-                    <div>
-                        <p>Facilities/Resources Type</p>
-                        <p>Please select one facility type</p>
-                        <div class="checkbox-list">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-                                <label class="custom-control-label" for="defaultUnchecked">Room 1</label>
+                <div style="margin: 10px">
+                    <div id="question1">
+                        <div>
+                            <p>Facilities/Resources Type</p>
+                            <p>Please select one facility type</p>
+                            <div class="checkbox-list">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                                    <label class="custom-control-label" for="defaultUnchecked">Room 1</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked2">
+                                    <label class="custom-control-label" for="defaultUnchecked2">Room 2</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked3">
+                                    <label class="custom-control-label" for="defaultUnchecked3">Room 3</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked4">
+                                    <label class="custom-control-label" for="defaultUnchecked4">Room 4</label>
+                                </div>
+                            
                             </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked2">
-                                <label class="custom-control-label" for="defaultUnchecked2">Room 2</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked3">
-                                <label class="custom-control-label" for="defaultUnchecked3">Room 3</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked4">
-                                <label class="custom-control-label" for="defaultUnchecked4">Room 4</label>
-                            </div>
-                        
                         </div>
                     </div>
-                </div>
-                <div id="question2">
-                        <div>
-                                <p>Location</p>
-                            <div class="checkbox-list">
+                    <div id="question2">
+                            <div>
+                                    <p>Location</p>
+                                <div class="checkbox-list">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.1">
+                                        <label class="custom-control-label" for="defaultUnchecked2.1">Room 1</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.2">
+                                        <label class="custom-control-label" for="defaultUnchecked2.2">Room 2</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.3">
+                                        <label class="custom-control-label" for="defaultUnchecked2.3">Room 3</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.4">
+                                        <label class="custom-control-label" for="defaultUnchecked2.4">Room 4</label>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                    </div>
+                    <div id="question3">
+                        <p>Facility/Resource(s)*:</p>
+                        <div class="checkbox-list">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.1">
                                     <label class="custom-control-label" for="defaultUnchecked2.1">Room 1</label>
@@ -73,38 +97,16 @@
                                 </div>
                             
                             </div>
-                        </div>
-                </div>
-                <div id="question3">
-                    <p>Facility/Resource(s)*:</p>
-                    <div class="checkbox-list">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.1">
-                                <label class="custom-control-label" for="defaultUnchecked2.1">Room 1</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.2">
-                                <label class="custom-control-label" for="defaultUnchecked2.2">Room 2</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.3">
-                                <label class="custom-control-label" for="defaultUnchecked2.3">Room 3</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.4">
-                                <label class="custom-control-label" for="defaultUnchecked2.4">Room 4</label>
-                            </div>
-                        
-                        </div>
-                </div>
-                <div id="question4">
-                    <p>Available Timing</p>
-                </div>
-                <div id="question4">
-                    <p>Available Timing</p>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-primary" onclick="reviewAnswers()">Search Availability</button>
+                    </div>
+                    <div id="question4">
+                        <p>Available Timing</p>
+                    </div>
+                    <div id="question4">
+                        <p>Available Timing</p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary" onclick="reviewAnswers()">Search Availability</button>
+                    </div>
                 </div>
         </div>
         <div class="right-side">
