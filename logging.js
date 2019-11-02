@@ -20,8 +20,7 @@ var LOG_VERSION = '0.1';           // Labels every entry with version: "0.1".
 
 // These event types are intercepted for logging before jQuery handlers.
 var EVENT_TYPES_TO_LOG = {
-  mousedown: false,
-  keydown: false
+  mousedown: false
 };
 
 // These event properties are copied to the log if present.
@@ -37,10 +36,14 @@ var GLOBAL_STATE_TO_LOG = function() {
   };
 };
 
+var clickTotal = 0;
+var startTime = 0;
+
 var loggingjs = (function() { // Immediately-Invoked Function Expression (IIFE); ref: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
 
 // A persistent unique id for the user.
-var uid = getUniqueId();
+    var uid = getUniqueId();
+    startTime = (new Date).getTime();
 
 // Hooks up all the event listeners.
 function hookEventsToLog() {
@@ -114,7 +117,7 @@ function getUniqueId() {
 function logEvent(event, customName, customInfo) {
 	
 	console.log('event', event, 'customName', customName, 'customInfo', customInfo);
-	
+    clickTotal++;
   var time = (new Date).getTime();
   var eventName = customName || event.type;
   // By default, monitor some global state on every event.
@@ -132,13 +135,14 @@ function logEvent(event, customName, customInfo) {
   var info = JSON.stringify(infoObj);
   var target = document;
   if (event) {target = elementDesc(event.target);}
-  var state = location.hash;
+    //var state = location.hash;
+    var state = clickTotal;
 
   if (ENABLE_CONSOLE_LOGGING) {
     console.log(uid, time, eventName, target, info, state, LOG_VERSION);
   }
   if (ENABLE_NETWORK_LOGGING) {
-    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+    //sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
   }
 }
 
@@ -153,6 +157,19 @@ return {
 };
 
 }());
+
+function reviewAnswers() {
+    var uid = 5;
+    var time = (new Date).getTime() - startTime;
+    var eventName = "search";
+    var target = "searchButton";
+    var info = "jhhuijo";
+    var state = clickTotal;
+    clickTotal = 0;
+    console.log("hi");
+
+    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+}
 
 /////////////////////////////////////////////////////////////////////////////
 // CHANGE ME:
