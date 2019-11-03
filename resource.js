@@ -4,35 +4,29 @@ $('#type-checkbox-list :checkbox').click(function (e) {
             $(this).prop('checked', false);
         }
     })
-    displayOptions('#' + e.target.id)
+    displayOptions('#' + e.target.id, '#Location-options')
 });
 
-
-
-
+$('#Location-options :checkbox').click(function (e) {
+    $("#Location-options :checkbox").each(function(){
+        if ($(this).prop('id') != e.target.id) {
+            $(this).prop('checked', false);
+        }
+    })
+    displayOptions('#' + e.target.id, '#Room-options');
+});
     
-function displayOptions(id) {
+function displayOptions(id, nextid) {       
     $(id).change(function() {
         if (this.checked) {
-          $('#Location-options').show();
+          $(nextid).show();
         //   $('#otherField').attr('required', '');
         //   $('#otherField').attr('data-error', 'This field is required.');
         } else {
-          $('#Location-options').hide();
+          $(nextid).hide();
         //   $('#otherField').removeAttr('required');
         //   $('#otherField').removeAttr('data-error');
         }
     });
 }
-// $("#defaultUnchecked").change(function() {
-//     if (this.checked) {
-//       $('#Location-options').show();
-//     //   $('#otherField').attr('required', '');
-//     //   $('#otherField').attr('data-error', 'This field is required.');
-//     } else {
-//       $('#Location-options').hide();
-//     //   $('#otherField').removeAttr('required');
-//     //   $('#otherField').removeAttr('data-error');
-//     }
-// });
 
