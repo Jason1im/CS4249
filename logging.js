@@ -262,7 +262,6 @@ function reviewAnswers2() {
         // same logic for answer checking. if correct, correctness  =  1.
         score = score + 1;
         window.location.href = "task3pre.html?score=" + score + "&task=1C";
-        var uid = "tester007"; //tobedone
         var timeTaken = (new Date).getTime() - startTime;
         var totalClicks = clickTotal;
         var attempts = 2 - attemptsLeft;
@@ -287,7 +286,6 @@ function reviewAnswers3() {
         // same logic for answer checking. if correct, correctness  =  1.
         score = score + 1;
         window.location.href = "end.html?score=" + score;
-        var uid = "tester007"; //tobedone
         var timeTaken = (new Date).getTime() - startTime;
         var totalClicks = clickTotal;
         var attempts = 2 - attemptsLeft;
