@@ -33,6 +33,7 @@ function displayOptions() {
     //   $('#otherField').attr('data-error', 'This field is required.');
     } else {
         $('#Room-options').hide();
+        var children = $('.parent-Room-options').prop('checked', false); // uncheck when hidden
     //   $('#otherField').removeAttr('required');
     //   $('#otherField').removeAttr('data-error');
     }
