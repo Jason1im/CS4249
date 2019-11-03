@@ -31,7 +31,7 @@
                         <div>
                             <p>Facilities/Resources Type</p>
                             <p>Please select one facility type</p>
-                            <div class="checkbox-list">
+                            <div class="checkbox-list" style="display:inline-flex;">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
                                     <label class="custom-control-label" for="defaultUnchecked">Room 1</label>
@@ -54,8 +54,9 @@
                     </div>
                     <hr>
                     <div id="Location">
-                            <div>
-                                    <p>Location</p>
+                        <p>Location</p>
+                                    
+                        <div id="Location-options" style="display: none;">
                                 <div class="checkbox-list">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.1">
@@ -145,6 +146,8 @@
         crossorigin="anonymous"></script>
     <script src="logging.js"> </script>
     <script src="test.js"></script>
+    <script src="resource.js"></script>
+    
 </body>
 
 </html>
