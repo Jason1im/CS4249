@@ -166,9 +166,12 @@ function reviewAnswers() {
     var info = "jhhuijo";
     var state = clickTotal;
     clickTotal = 0;
-    console.log("hi");
-
-    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+    if (false) {
+      alert("wrong ans");
+      window.location.href="javascript: void(0)";
+      window.location.href = "task.html";
+    }
+    // sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -223,14 +226,4 @@ function sendNetworkLog(
   // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
   (new Image).src = "https://docs.google.com/forms/d/" + formid +
      "/formResponse?" + params.join("&");
-}
-
-
-function reviewAnswers() {
-  if (false) {
-    alert("wrong ans");
-    window.location.href="javascript: void(0)";
-    window.location.href = "task.html";
-  }
-  console.log("hello einifadhflkshaj");
 }
