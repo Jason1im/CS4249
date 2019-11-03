@@ -38,6 +38,8 @@ var GLOBAL_STATE_TO_LOG = function() {
 
 var clickTotal = 0;
 var startTime = 0;
+var autopass = false;
+var attemptsLeft = 3;
 
 var loggingjs = (function() { // Immediately-Invoked Function Expression (IIFE); ref: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
 
@@ -158,18 +160,6 @@ return {
 
 }());
 
-function reviewAnswers() {
-    var uid = 5;
-    var time = (new Date).getTime() - startTime;
-    var eventName = "search";
-    var target = "searchButton";
-    var info = "jhhuijo";
-    var state = clickTotal;
-    clickTotal = 0;
-    console.log("hi");
-
-    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
-}
 
 /////////////////////////////////////////////////////////////////////////////
 // CHANGE ME:
@@ -227,10 +217,28 @@ function sendNetworkLog(
 
 
 function reviewAnswers() {
-  if (false) {
-    alert("wrong ans");
-    window.location.href="javascript: void(0)";
-    window.location.href = "task.html";
-  }
-  console.log("hello einifadhflkshaj");
+    if (autopass) {
+        // same logic for answer checking. if correct, score +1.
+        window.location.href = "task.html";
+        var uid = "tester007";
+        var time = (new Date).getTime() - startTime;
+        var eventName = "search";
+        var target = "searchAvailabilityButton";
+        var info = "attempts left = " + attemptsLeft;
+        var state = "total clicks = " + clickTotal;
+        clickTotal = 0;
+        console.log("hi");
+
+        sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+    } 
+      // todo: add in logic for answer checking. for now assume wrong
+    alert("You have made some wrong selections. Please try again. You have " + attemptsLeft + " attempts left");
+    //alert("wrong answer");
+      window.location.href = "javascript: void(0)";
+        attemptsLeft--;
+        if (attemptsLeft == 0) {
+            autopass = true;
+        }
+  
+  //console.log("hello einifadhflkshaj");
 }
