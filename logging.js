@@ -138,7 +138,7 @@ function logEvent(event, customName, customInfo) {
     console.log(uid, time, eventName, target, info, state, LOG_VERSION);
   }
   if (ENABLE_NETWORK_LOGGING) {
-    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+    x(uid, time, eventName, target, info, state, LOG_VERSION);
   }
 }
 
@@ -206,4 +206,14 @@ function sendNetworkLog(
   // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
   (new Image).src = "https://docs.google.com/forms/d/" + formid +
      "/formResponse?" + params.join("&");
+}
+
+
+function reviewAnswers() {
+  if (false) {
+    alert("wrong ans");
+    window.location.href="javascript: void(0)";
+    window.location.href = "task.html";
+  }
+  console.log("hello einifadhflkshaj");
 }

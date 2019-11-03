@@ -17,8 +17,8 @@
         
     </div>
     <div id="nav-bar-2">
-        <a style="margin-left: 10px">Home</a>
-        <a style="margin-left: 10px">Manage Booking</a>
+        <a style="margin-left: 30px">Home</a>
+        <a style="margin-left: 100px">Manage Booking</a>
     </div>
     <div class="main-body"> 
         <div id="search-box" class="border">
@@ -27,7 +27,7 @@
                     <a href="#">Save Preference</a>
                 </div>
                 <div style="margin: 10px">
-                    <div id="question1">
+                    <div id="Facilities/Resources Type">
                         <div>
                             <p>Facilities/Resources Type</p>
                             <p>Please select one facility type</p>
@@ -52,7 +52,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="question2">
+                    <hr>
+                    <div id="Location">
                             <div>
                                     <p>Location</p>
                                 <div class="checkbox-list">
@@ -76,7 +77,7 @@
                                 </div>
                             </div>
                     </div>
-                    <div id="question3">
+                    <div id="Facility/Resource">
                         <p>Facility/Resource(s)*:</p>
                         <div class="checkbox-list">
                                 <div class="custom-control custom-checkbox">
@@ -98,14 +99,22 @@
                             
                             </div>
                     </div>
-                    <div id="question4">
-                        <p>Available Timing</p>
+                    <div id="Date" style="display: inline-flex;">
+                        <p>Date</p>
+                        <input type="date" readonly>
+                        <p>to:</p>
+                        <input type="date" readonly>
                     </div>
-                    <div id="question4">
+                    <div></div>
+                    <div id="question5" style="display: inline-flex;">
                         <p>Available Timing</p>
+                        <input type="date" readonly>
+                        <p>to:</p>
+                        <input type="date" readonly>
                     </div>
-                    <div>
-                        <button type="button" class="btn btn-primary" onclick="reviewAnswers()">Search Availability</button>
+                    <div id="search-button">
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="reviewAnswers()">Search Availability</button>
+                        <a class="btn btn-outline-primary btn-sm" onclick="reviewAnswers(); return false;">Go to Google</a>
                     </div>
                 </div>
         </div>
