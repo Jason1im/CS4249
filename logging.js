@@ -36,16 +36,29 @@ var GLOBAL_STATE_TO_LOG = function() {
   };
 };
 
+var uid = 0;
 var clickTotal = 0;
 var startTime = 0;
 var autopass = false;
-var attemptsLeft = 3;
+var attemptsLeft = 1;
+var score = 0;
+var taskCode = "";
 
 var loggingjs = (function() { // Immediately-Invoked Function Expression (IIFE); ref: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
 
 // A persistent unique id for the user.
-    var uid = getUniqueId();
+    uid = getUniqueId();
     startTime = (new Date).getTime();
+    var urlParams = new URLSearchParams(window.location.search);
+    var carryOverScore = urlParams.get('score');
+    //console.log("carry over score is " + carryOverScore);
+    if ((carryOverScore == null) || (carryOverScore == "0")) {
+        score = 0;
+    } else {
+        score = parseInt(carryOverScore);
+    }
+    //console.log(score);
+    taskCode = urlParams.get('task');
 
 // Hooks up all the event listeners.
 function hookEventsToLog() {
@@ -188,57 +201,119 @@ return {
 
 // submits to the google form at this URL:
 // docs.google.com/forms/d/e/1FAIpQLScO9eSAfZ-pTZsUihSfBH-hMTqwCW17TNKc5esCMG6gfFITYg/viewform?usp=sf_link
+
+
+
 function sendNetworkLog(
     uid,
-    time,
-    eventname,
-    target,
-    info,
-    state,
-    version) {
-  var formid = "e/1FAIpQLScO9eSAfZ-pTZsUihSfBH-hMTqwCW17TNKc5esCMG6gfFITYg";
-  var data = {
-    "entry.737855329": uid,
-    "entry.1133665943": time,
-    "entry.1847236472": eventname,
-    "entry.1862462055": target,
-    "entry.374115865": info,
-    "entry.56371307": state,
-    "entry.1592726850": version
-  };
-  var params = [];
-  for (key in data) {
-    params.push(key + "=" + encodeURIComponent(data[key]));
-  }
-  // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
-  (new Image).src = "https://docs.google.com/forms/d/" + formid +
-     "/formResponse?" + params.join("&");
+    timeTaken,
+    totalClicks,
+    numberOfAttempts,
+    scoreForThisTask,
+    taskCode,
+    totalScoreForThisTrialSoFar) {
+    var formid = "e/1FAIpQLSeKjGzo_yGFp5wanbRIi2N0M1XFy2No9UjjYwNOSLqdJAcOmw";
+    var data = {
+        "entry.1021637610": uid,
+        "entry.1751317868": timeTaken,
+        "entry.1761723561": totalClicks,
+        "entry.1278555973": numberOfAttempts,
+        "entry.1529203773": scoreForThisTask,
+        "entry.1630418402": taskCode,
+        "entry.613301231": totalScoreForThisTrialSoFar
+    };
+    var params = [];
+    for (key in data) {
+        params.push(key + "=" + encodeURIComponent(data[key]));
+    }
+    // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
+    (new Image).src = "https://docs.google.com/forms/d/" + formid +
+        "/formResponse?" + params.join("&");
 }
 
 
 function reviewAnswers() {
     if (autopass) {
-        // same logic for answer checking. if correct, score +1.
-        window.location.href = "task.html";
-        var uid = "tester007";
-        var time = (new Date).getTime() - startTime;
-        var eventName = "search";
-        var target = "searchAvailabilityButton";
-        var info = "attempts left = " + attemptsLeft;
-        var state = "total clicks = " + clickTotal;
+        // same logic for answer checking. if correct, correctness  =  1.
+        score = score + 1;
+        window.location.href = "task2pre.html?score=" + score + "&task=1B";
+        var timeTaken = (new Date).getTime() - startTime;
+        var totalClicks = clickTotal;
+        var attempts = 2 - attemptsLeft;
+        //var eventName = "search";
+        var correctness = 1;
+        
         clickTotal = 0;
-        console.log("hi");
 
-        sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+        sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
     } 
       // todo: add in logic for answer checking. for now assume wrong
     alert("You have made some wrong selections. Please try again. You have " + attemptsLeft + " attempts left");
-    //alert("wrong answer");
       window.location.href = "javascript: void(0)";
         attemptsLeft--;
         if (attemptsLeft == 0) {
             autopass = true;
         }
-  
-  //console.log("hello einifadhflkshaj");
+ 
+}
+
+function reviewAnswers2() {
+    if (autopass) {
+        // same logic for answer checking. if correct, correctness  =  1.
+        score = score + 1;
+        window.location.href = "task3pre.html?score=" + score + "&task=1C";
+        var timeTaken = (new Date).getTime() - startTime;
+        var totalClicks = clickTotal;
+        var attempts = 2 - attemptsLeft;
+        //var eventName = "search";
+        var correctness = 1;
+
+        clickTotal = 0;
+
+        sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+    }
+    // todo: add in logic for answer checking. for now assume wrong
+    alert("You have made some wrong selections. Please try again. You have " + attemptsLeft + " attempts left");
+    window.location.href = "javascript: void(0)";
+    attemptsLeft--;
+    if (attemptsLeft == 0) {
+        autopass = true;
+    }
+}
+
+function reviewAnswers3() {
+    if (autopass) {
+        // same logic for answer checking. if correct, correctness  =  1.
+        score = score + 1;
+        window.location.href = "end.html?score=" + score;
+        var timeTaken = (new Date).getTime() - startTime;
+        var totalClicks = clickTotal;
+        var attempts = 2 - attemptsLeft;
+        //var eventName = "search";
+        var correctness = 1;
+
+        clickTotal = 0;
+
+        sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+    }
+    // todo: add in logic for answer checking. for now assume wrong
+    alert("You have made some wrong selections. Please try again. You have " + attemptsLeft + " attempts left");
+    window.location.href = "javascript: void(0)";
+    attemptsLeft--;
+    if (attemptsLeft == 0) {
+        autopass = true;
+    }
+
+}
+
+function goToTask1() {
+    window.location.href = "index.html?score=" + score + "&task=1A";
+}
+
+function goToTask2() {
+    window.location.href = "index2.html?score=" + score + "&task=1B";
+}
+
+function goToTask3() {
+    window.location.href = "index3.html?score=" + score + "&task=1C";
 }
