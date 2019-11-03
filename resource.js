@@ -4,7 +4,7 @@ $('#type-checkbox-list :checkbox').click(function (e) {
             $(this).prop('checked', false);
         }
     })
-    displayOptions('#' + e.target.id, '#Location-options')
+    displayOptions('#' + e.target.id, '#Room-options')
 });
 
 $('#Location-options :checkbox').click(function (e) {
@@ -30,3 +30,4 @@ function displayOptions(id, nextid) {
     });
 }
 
+$("#Room-options").wrapAll("<div class='custom-checkbox'></div>");

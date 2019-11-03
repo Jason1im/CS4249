@@ -11,6 +11,7 @@ body {
     display: inline-flex;
     width: 100%;
     color: #362BBD;
+    ;
 }
 
 .main-body > div {
@@ -28,10 +29,26 @@ body {
 
 #search-box {
     height: calc(100% - 10px);
-    width: 50%;
+    width: 973px;
     overflow: auto;
 }
 
+.checkbox-list {
+    display: inline-flex;
+    overflow: auto;
+}
+
+#Room-options {
+    flex-wrap: wrap;
+}
+
+.custom-checkbox {
+    height: 58px;
+    width: 215px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+}
 #nav-bar-1 {
 
     width: 100%;
