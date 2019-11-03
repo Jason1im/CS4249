@@ -2,30 +2,33 @@
 body {
     margin: 0;
     padding: 0;
+    /* font: Bold 12px/16px Segoe UI; */
+    font-family: Segoe UI;
+    font-weight: 600;
 }
 
 .main-body {
     display: inline-flex;
+    width: 100%;
+    color: #362BBD;
 }
 
-.main-body div {
+.main-body > div {
     margin: 10px;
-}
-
-.border {
-    border-style: solid;    
-    border-width: 1px;
-    border-color: #ccc;
+    height: -moz-calc(100% - (50px + 30px));
+    height: -webkit-calc(100% - (50px + 30px));
+    height: calc(100% - (50px + 30px));
 }
 
 .block-header {
     background: #E9E8E3 ;
     width: 100%;  
+    padding: 0px 0px 0px 10px;
 }
 
 #search-box {
-    height: 600px;
-    width: 1000px;
+    height: calc(100% - 10px);
+    width: 50%;
     overflow: auto;
 }
 
@@ -36,12 +39,13 @@ body {
     background: transparent linear-gradient(180deg, #C8BEBD 0%, #ACA4A3 98%, #645F5F 100%) 0% 0% no-repeat padding-box;
     opacity: 1;
     display: inline-flex;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 5px;
 }
 
 #welcome-msg {
     margin-left: 10px;
-    margin-top: 5px;
-    font: Bold 12px/16px Segoe UI;
     letter-spacing: 0;
     color: #333333;
     opacity: 1;
@@ -51,11 +55,13 @@ body {
     background-color: #C8BEBD;
     width: 100%;
     height: 50px;
-    display: inline-flex;
+    display: inline-flex;    
+    line-height: 50px;
+    text-align: center;
 }
 
 .annoucement, .personal-booking {
-    height: 50px;
+    height: 150px;
     width: 400px;
     border-style: solid;
     border-width: 1px;
@@ -66,3 +72,29 @@ body {
     position: absolute;
     right: 5px;
 }
+
+#search-button {
+    margin-left: 80%;
+
+}
+
+.btn-outline-primary {
+    color: #362BBD;
+    border-color: #362BBD;
+    font-family: Segoe UI;
+    font-weight: 600;
+}
+
+
+/* general css classes*/
+
+.border {
+    border-style: solid;    
+    border-width: 1px;
+    border-color: #ccc;
+}
+
+/* .no-margin {
+    margin: 0;
+    padding: 0;
+} */

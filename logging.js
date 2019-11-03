@@ -224,3 +224,13 @@ function sendNetworkLog(
   (new Image).src = "https://docs.google.com/forms/d/" + formid +
      "/formResponse?" + params.join("&");
 }
+
+
+function reviewAnswers() {
+  if (false) {
+    alert("wrong ans");
+    window.location.href="javascript: void(0)";
+    window.location.href = "task.html";
+  }
+  console.log("hello einifadhflkshaj");
+}
