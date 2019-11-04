@@ -234,26 +234,6 @@ function sendNetworkLog(
 
 function reviewAnswers(taskNum) {
 
-    //if (autopass) {
-    //    // same logic for answer checking. if correct, correctness  =  1.
-    //    score = score + 1;
-    //    if (taskNum == 1) {
-    //        window.location.href = "task2pre.html?score=" + score + "&task=1B";
-    //    } else if (taskNum == 2) {
-    //        window.location.href = "task3pre.html?score=" + score + "&task=1C";
-    //    } else if (taskNum == 3) {
-    //        window.location.href = "end.html?score=" + score;
-    //    }
-    //    var timeTaken = (new Date).getTime() - startTime;
-    //    var totalClicks = clickTotal;
-    //    var attempts = 2 - attemptsLeft;
-    //    //var eventName = "search";
-    //    var correctness = 1;
-        
-    //    clickTotal = 0;
-
-    //    sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
-    //} 
 
     if (taskNum == 1) {
         var bool = $('#room7').is(":checked"); //check if the room is checked
