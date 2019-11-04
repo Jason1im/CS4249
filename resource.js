@@ -54,14 +54,6 @@ $('#type-checkbox-list :checkbox').click(function (eventObj) {
         }
     })
     displayOptions();
-    console.log(buildingA)
-    console.log(typechecked);
-    console.log(anyFacil);
-    console.log(facilA);
-    console.log(facilB);
-    console.log(facilC);
-    console.log(facilD);
-    console.log(facilE);
 });
 
 
