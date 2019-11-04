@@ -1,4 +1,4 @@
-var locationchecked = false;
+var Buildingchecked = false;
 var typechecked = false;
 var locationA = false;
 var locationB = false;
@@ -10,6 +10,7 @@ var facilA = false;
 var facilB = false;
 var facilC = false;
 var facilD = false;
+var facilE = false;
 
 $('#type-checkbox-list :checkbox').click(function (eventObj) {
     $("#type-checkbox-list :checkbox").each(function(){
@@ -19,26 +20,36 @@ $('#type-checkbox-list :checkbox').click(function (eventObj) {
             typechecked = $(this).prop('checked');
             anyFacil = !typechecked;
             facilA = facilB = facilC = facilD = anyFacil;
-            if ($(this).prop('id') == 'typeA') {
+            if ($(this).prop('id') == 'StudyRoom') {
                 facilA = typechecked;
                 facilB = false;
                 facilC = false;
                 facilD = false;
-            } else if ($(this).prop('id') == 'typeB') {
+                facilE = false;
+            } else if ($(this).prop('id') == 'ConferenceRoom') {
                 facilA = false;
                 facilB = typechecked;
                 facilC = false;
                 facilD = false;
-            } else if ($(this).prop('id') == 'typeC') {
+                facilE = false;
+            } else if ($(this).prop('id') == 'MusicRoom') {
                 facilA = false;
                 facilB = false;
                 facilC = typechecked;
                 facilD = false;
-            } else if ($(this).prop('id') == 'typeD') {
+                facilE = false;
+            } else if ($(this).prop('id') == 'PracticeRoom') {
                 facilA = false;
                 facilB = false;
                 facilC = false;
                 facilD = typechecked;
+                facilE = false;
+            } else if ($(this).prop('id') == 'OpenSpace') {
+                facilA = false;
+                facilB = false;
+                facilC = false;
+                facilD = false;
+                facilE = typechecked;
             }
         }
     })
@@ -52,33 +63,33 @@ $('#Location-options :checkbox').click(function (eventObj) {
         if ($(this).prop('id') != eventObj.target.id) {
             $(this).prop('checked', false);
         } else {
-            locationA = locationB = locationC = locationD = false;
-            locationchecked = $(this).prop('checked');
-            if ($(this).prop('id') == 'locationA') {
-                locationA = locationchecked;
-                locationB = false;
-                locationC = false;
-                locationD = false;
-            } else if ($(this).prop('id') == 'locationB') {
-                locationA = false;
-                locationB = locationchecked;
-                locationC = false;
-                locationD = false;
-            } else if ($(this).prop('id') == 'locationC') {
-                locationA = false;
-                locationB = false;
-                locationC = locationchecked;
-                locationD = false;
-            } else if ($(this).prop('id') == 'locationD') {
-                locationA = false;
-                locationB = false;
-                locationC = false;
-                locationD = locationchecked;
-            } else if ($(this).prop('id') == 'anyLocation') {
-                locationA = locationchecked;
-                locationB = locationchecked;
-                locationC = locationchecked;
-                locationD = locationchecked;
+            BuildingA = BuildingB = BuildingC = BuildingD = false;
+            Buildingchecked = $(this).prop('checked');
+            if ($(this).prop('id') == 'BuildingA') {
+                BuildingA = Buildingchecked;
+                BuildingB = false;
+                BuildingC = false;
+                BuildingD = false;
+            } else if ($(this).prop('id') == 'BuildingB') {
+                BuildingA = false;
+                BuildingB = Buildingchecked;
+                BuildingC = false;
+                BuildingD = false;
+            } else if ($(this).prop('id') == 'BuildingC') {
+                BuildingA = false;
+                BuildingB = false;
+                BuildingC = Buildingchecked;
+                BuildingD = false;
+            } else if ($(this).prop('id') == 'BuildingD') {
+                BuildingA = false;
+                BuildingB = false;
+                BuildingC = false;
+                BuildingD = Buildingchecked;
+            } else if ($(this).prop('id') == 'anyBuilding') {
+                BuildingA = Buildingchecked;
+                BuildingB = Buildingchecked;
+                BuildingC = Buildingchecked;
+                BuildingD = Buildingchecked;
             }
         }
     })
@@ -86,29 +97,28 @@ $('#Location-options :checkbox').click(function (eventObj) {
 });
     
 function displayOptions() {
-   // console.log(locationchecked + " type: "+ typechecked);
-   // if (locationchecked || typechecked) {
-       console.log($('parent-Room-options').length);
+   // console.log(Buildingchecked + " type: "+ typechecked);
+   // if (Buildingchecked || typechecked) {
         $('#Room-options').show();
-        if (locationA) {
-            $('.location-locationA').css('display', "inline-flex");
+        if (BuildingA) {
+            $('.location-BuildingA').css('display', "inline-flex");
         } else {
-            $('.location-locationA').css('display', "none");
-            $('.location-locationA').prop('checked', false);
+            $('.location-BuildingA').css('display', "none");
+            $('.location-BuildingA').prop('checked', false);
         }
 
-        if (locationB) {
-            $('.location-locationB').css('display', "inline-flex");
+        if (BuildingB) {
+            $('.location-BuildingB').css('display', "inline-flex");
         } else {
-            $('.location-locationB').css('display', "none");
-            $('.location-locationB').prop('checked', false);
+            $('.location-BuildingB').css('display', "none");
+            $('.location-BuildingB').prop('checked', false);
         }
 
-        if (locationC) {
-            $('.location-locationC').css('display', "inline-flex");
+        if (BuildingC) {
+            $('.location-BuildingC').css('display', "inline-flex");
         } else {
-            $('.location-locationC').css('display', "none");
-            $('.location-locationC').prop('checked', false);
+            $('.location-BuildingC').css('display', "none");
+            $('.location-BuildingC').prop('checked', false);
         }
 
         if (locationD) {
@@ -120,43 +130,50 @@ function displayOptions() {
 
     if (!anyFacil) {
         if (facilA) {
-            if (!locationchecked) {
-                $('.faciltype-typeA').css('display', 'inline-flex');
+            if (!Buildingchecked) {
+                $('.faciltype-StudyRoom').css('display', 'inline-flex');
             }
             
         } else {
-            $('.faciltype-typeA').css('display', 'none');
-            $('.faciltype-typeA').prop('checked', false);
+            $('.faciltype-StudyRoom').css('display', 'none');
+            $('.faciltype-StudyRoom').prop('checked', false);
         }
 
         if (facilB) {
-            if (!locationchecked) {
-                $('.faciltype-typeB').css('display', 'inline-flex');
+            if (!Buildingchecked) {
+                $('.faciltype-ConferenceRoom').css('display', 'inline-flex');
             }
             // $('.faciltype-typeB').css('display', 'inline-flex');
         } else {
-            $('.faciltype-typeB').css('display', 'none');
-            $('.faciltype-typeB').prop('checked', false);
+            $('.faciltype-ConferenceRoom').css('display', 'none');
+            $('.faciltype-ConferenceRoom').prop('checked', false);
         }
 
         if (facilC) {
-            if (!locationchecked) {
-                $('.faciltype-typeC').css('display', 'inline-flex');
+            if (!Buildingchecked) {
+                $('.faciltype-MusicRoom').css('display', 'inline-flex');
             }
             //$('.faciltype-typeC').css('display', 'inline-flex');
         } else {
-            $('.faciltype-typeC').css('display', 'none');
-            $('.faciltype-typeC').prop('checked', false);
+            $('.faciltype-MusicRoom').css('display', 'none');
+            $('.faciltype-MusicRoom').prop('checked', false);
         }
 
         if (facilD) {
-            if (!locationchecked) {
-                $('.faciltype-typeD').css('display', 'inline-flex');
+            if (!Buildingchecked) {
+                $('.faciltype-PracticeRoom').css('display', 'inline-flex');
             }
-            // $('.faciltype-typeD').css('display', 'inline-flex');
         } else {
-            $('.faciltype-typeD').css('display', 'none');
-            $('.faciltype-typeD').prop('checked', false);
+            $('.faciltype-PracticeRoom').css('display', 'none');
+            $('.faciltype-PracticeRoom').prop('checked', false);
+        }
+        if (facilE) {
+            if (!Buildingchecked) {
+                $('.faciltype-OpenSpace').css('display', 'inline-flex');
+            }
+        } else {
+            $('.faciltype-OpenSpace').css('display', 'none');
+            $('.faciltype-OpenSpace').prop('checked', false);
         }
     } 
     //   $('#otherField').attr('required', '');
