@@ -60,6 +60,7 @@ $('#Location-options :checkbox').click(function (eventObj) {
 function displayOptions() {
    // console.log(locationchecked + " type: "+ typechecked);
    // if (locationchecked || typechecked) {
+       console.log($('parent-Room-options').length);
         $('#Room-options').show();
         if (locationA) {
             $('.location-locationA').css('display', "inline-flex");
