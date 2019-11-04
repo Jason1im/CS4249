@@ -1,10 +1,10 @@
 var Buildingchecked = false;
 var typechecked = false;
-var locationA = false;
-var locationB = false;
-var locationC = false;
-var locationD = false;
-var anyLocation = false;
+var buildingA = false;
+var buildingB = false;
+var buildingC = false;
+var buildingD = false;
+var anyBuilding = false;
 var anyFacil = true;
 var facilA = false;
 var facilB = false;
@@ -19,7 +19,7 @@ $('#type-checkbox-list :checkbox').click(function (eventObj) {
         } else {
             typechecked = $(this).prop('checked');
             anyFacil = !typechecked;
-            facilA = facilB = facilC = facilD = anyFacil;
+            facilA = facilB = facilC = facilD = facilE = anyFacil;
             if ($(this).prop('id') == 'StudyRoom') {
                 facilA = typechecked;
                 facilB = false;
@@ -54,6 +54,14 @@ $('#type-checkbox-list :checkbox').click(function (eventObj) {
         }
     })
     displayOptions();
+    console.log(buildingA)
+    console.log(typechecked);
+    console.log(anyFacil);
+    console.log(facilA);
+    console.log(facilB);
+    console.log(facilC);
+    console.log(facilD);
+    console.log(facilE);
 });
 
 
@@ -63,33 +71,33 @@ $('#Location-options :checkbox').click(function (eventObj) {
         if ($(this).prop('id') != eventObj.target.id) {
             $(this).prop('checked', false);
         } else {
-            BuildingA = BuildingB = BuildingC = BuildingD = false;
+            buildingA = buildingB = buildingC = buildingD = false;
             Buildingchecked = $(this).prop('checked');
             if ($(this).prop('id') == 'BuildingA') {
-                BuildingA = Buildingchecked;
-                BuildingB = false;
-                BuildingC = false;
-                BuildingD = false;
+                buildingA = Buildingchecked;
+                buildingB = false;
+                buildingC = false;
+                buildingD = false;
             } else if ($(this).prop('id') == 'BuildingB') {
-                BuildingA = false;
-                BuildingB = Buildingchecked;
-                BuildingC = false;
-                BuildingD = false;
+                buildingA = false;
+                buildingB = Buildingchecked;
+                buildingC = false;
+                buildingD = false;
             } else if ($(this).prop('id') == 'BuildingC') {
-                BuildingA = false;
-                BuildingB = false;
-                BuildingC = Buildingchecked;
-                BuildingD = false;
+                buildingA = false;
+                buildingB = false;
+                buildingC = Buildingchecked;
+                buildingD = false;
             } else if ($(this).prop('id') == 'BuildingD') {
-                BuildingA = false;
-                BuildingB = false;
-                BuildingC = false;
-                BuildingD = Buildingchecked;
+                buildingA = false;
+                buildingB = false;
+                buildingC = false;
+                buildingD = Buildingchecked;
             } else if ($(this).prop('id') == 'anyBuilding') {
-                BuildingA = Buildingchecked;
-                BuildingB = Buildingchecked;
-                BuildingC = Buildingchecked;
-                BuildingD = Buildingchecked;
+                buildingA = Buildingchecked;
+                buildingB = Buildingchecked;
+                buildingC = Buildingchecked;
+                buildingD = Buildingchecked;
             }
         }
     })
@@ -100,28 +108,28 @@ function displayOptions() {
    // console.log(Buildingchecked + " type: "+ typechecked);
    // if (Buildingchecked || typechecked) {
         $('#Room-options').show();
-        if (BuildingA) {
+        if (buildingA) {
             $('.location-BuildingA').css('display', "inline-flex");
         } else {
             $('.location-BuildingA').css('display', "none");
             $('.location-BuildingA').prop('checked', false);
         }
 
-        if (BuildingB) {
+        if (buildingB) {
             $('.location-BuildingB').css('display', "inline-flex");
         } else {
             $('.location-BuildingB').css('display', "none");
             $('.location-BuildingB').prop('checked', false);
         }
 
-        if (BuildingC) {
+        if (buildingC) {
             $('.location-BuildingC').css('display', "inline-flex");
         } else {
             $('.location-BuildingC').css('display', "none");
             $('.location-BuildingC').prop('checked', false);
         }
 
-        if (locationD) {
+        if (buildingD) {
             $('.location-locationD').css('display', "inline-flex");
         } else {
             $('.location-locationD').css('display', "none");
