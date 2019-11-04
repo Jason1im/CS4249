@@ -1,0 +1,149 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+    <title>Sample HTML5</title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="append-html.js"></script>
+<body>
+    <div id="nav-bar-1">
+        <p id="welcome-msg">Welcome, e0001234</p>
+        <a href="#" id="logout-button">Log Out</a>
+        
+    </div>
+    <div id="nav-bar-2">
+        <a style="margin-left: 30px">Home</a>
+        <a style="margin-left: 100px">Manage Booking</a>
+    </div>
+    <div class="main-body"> 
+        <div id="search-box" class="border">
+                <div class="block-header"  style="display: inline-flex;"> 
+                    <p>New Booking</p>
+                    <a href="#">Save Preference</a>
+                </div>
+                <div style="margin: 10px">
+                    <div id="question1">
+                        <div>
+                            <p>Facilities/Resources Type</p>
+                            <p>Please select one facility type</p>
+                            <div class="checkbox-list">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                                    <label class="custom-control-label" for="defaultUnchecked">Room 1</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked2">
+                                    <label class="custom-control-label" for="defaultUnchecked2">Room 2</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked3">
+                                    <label class="custom-control-label" for="defaultUnchecked3">Room 3</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked4">
+                                    <label class="custom-control-label" for="defaultUnchecked4">Room 4</label>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div id="question2">
+                            <div>
+                                    <p>Location</p>
+                                <div class="checkbox-list">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.1">
+                                        <label class="custom-control-label" for="defaultUnchecked2.1">Room 1</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.2">
+                                        <label class="custom-control-label" for="defaultUnchecked2.2">Room 2</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.3">
+                                        <label class="custom-control-label" for="defaultUnchecked2.3">Room 3</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.4">
+                                        <label class="custom-control-label" for="defaultUnchecked2.4">Room 4</label>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                    </div>
+                    <div id="question3">
+                        <p>Facility/Resource(s)*:</p>
+                        <div class="checkbox-list">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.1">
+                                    <label class="custom-control-label" for="defaultUnchecked2.1">Room 1</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.2">
+                                    <label class="custom-control-label" for="defaultUnchecked2.2">Room 2</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.3">
+                                    <label class="custom-control-label" for="defaultUnchecked2.3">Room 3</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked2.4">
+                                    <label class="custom-control-label" for="defaultUnchecked2.4">Room 4</label>
+                                </div>
+                            
+                            </div>
+                    </div>
+                    <div id="question4" style="display: inline-flex;">
+                        <p>Date</p>
+                        <input type="date" readonly>
+                        <p>to:</p>
+                        <input type="date" readonly>
+                    </div>
+                    <div></div>
+                    <div id="question5" style="display: inline-flex;">
+                        <p>Available Timing</p>
+                        <input type="date" readonly>
+                        <p>to:</p>
+                        <input type="date" readonly>
+                    </div>
+                    <div id="search-button">
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="reviewAnswers()">Search Availability</button>
+                    </div>
+                </div>
+        </div>
+        <div class="right-side">
+            <div class="annoucement border">
+                    <div class="block-header"  style="display: inline-flex;"> 
+                        <p>Annoucement</p>
+                    </div>
+            </div>
+            <div class="personal-booking border">
+                    <div class="block-header"  style="display: inline-flex;"> 
+                        <p>My Personal Booking</p>
+                    </div>
+            </div>
+        </div>
+
+        </div>
+        
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="logging.js"> </script>
+    <script src="test.js"></script>
+</body>
+
+</html>
