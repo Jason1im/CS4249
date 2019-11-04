@@ -1,0 +1,180 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+    <title>Sample HTML5</title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="append-html.js"></script>
+
+<body>
+    <div id="nav-bar-1">
+        <p id="welcome-msg">Welcome, e0001234</p>
+        <a href="#" id="logout-button">Log Out</a>
+
+    </div>
+    <div id="nav-bar-2">
+        <a style="margin-left: 30px">Home</a>
+        <a style="margin-left: 100px">Manage Booking</a>
+    </div>
+    <div class="main-body">
+        <div id="search-box" class="border">
+            <div class="block-header" style="display: inline-flex;">
+                <p>New Booking</p>
+            </div>
+            <div style="margin: 10px">
+                <div id="Facilities/Resources Type">
+                    <div>
+                        <p>Facilities/Resources Type</p>
+                        <p style="font-size: 12px;">Please select one facility type</p>
+                        <div class="checkbox-list" id="type-checkbox-list" style="display:inline-flex;">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="StudyRoom">
+                                <label class="custom-control-label" for="StudyRoom">Study Room</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="ConferenceRoom">
+                                <label class="custom-control-label" for="ConferenceRoom">Conference Room</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="MusicRoom">
+                                <label class="custom-control-label" for="MusicRoom">Music Room</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="PracticeRoom">
+                                <label class="custom-control-label" for="PracticeRoom">Practice Room</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="OpenSpace">
+                                <label class="custom-control-label" for="OpenSpace">Open Space</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="Location">
+                    <p>Location</p>
+                    <div style="height: 60px; overflow: auto;">
+                        <div class="checkbox-list" id="Location-options">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="anyBuilding">
+                                <label class="custom-control-label" for="anyBuilding">Any Building</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="BuildingA">
+                                <label class="custom-control-label" for="BuildingA">Building A</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="BuildingB">
+                                <label class="custom-control-label" for="BuildingB">Building B</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="BuildingC">
+                                <label class="custom-control-label" for="BuildingC">Building C</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Facility/Resource">
+                    <p>Facility/Resource(s)*:</p>
+                    <div style="height: 400px; overflow: auto;">
+                        <div class="checkbox-list" id="Room-options" style="display: none;">
+                            <script src="createroom.js"></script>
+                            <script>createRooms();</script>
+                        </div>
+                    </div>
+                </div>
+                <div id="Date" style="display: inline-flex;">
+                    <p>Date</p>
+                    <input type="date" id="startDate" />
+                    <p>to:</p>
+                    <input type="date" id="endDate" />
+                </div>
+                <div></div>
+                <div id="Timing" style="display: inline-flex; margin-top: 20px;">
+
+                    <label for="start-time-select">Available Timing:</label>
+                    <select class="form-control-sm" id="start-time-select" style="width: 80px;">
+                        <option>7:00</option>
+                        <option>8:00</option>
+                        <option>9:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+                        <option>21:00</option>
+                        <option>22:00</option>
+                    </select>
+                    <label for="start-time-select">to:</label>
+                    <select class="form-control-sm" id="end-time-select" style="width: 80px;">
+                        <option>7:00</option>
+                        <option>8:00</option>
+                        <option>9:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+                        <option>21:00</option>
+                        <option>22:00</option>
+                    </select>
+                </div>
+                <div id="search-button">
+                    <a class="btn btn-outline-primary btn-sm" onclick="reviewAnswers(2); return false;">
+                        Search
+                        Availability
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="annoucement border">
+                <div class="block-header" style="display: inline-flex;">
+                    <p>Annoucement</p>
+                </div>
+            </div>
+            <div class="personal-booking border">
+                <div class="block-header" style="display: inline-flex;">
+                    <p>My Personal Booking</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="logging.js"></script>
+    <script src="test.js"></script>
+    <script src="resource.js"></script>
+
+</body>
+
+</html>
