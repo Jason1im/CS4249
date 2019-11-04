@@ -1,34 +1,34 @@
 var roomArr = [
-    { location: 'locationA', faciltype: 'typeB', name: 'room '},
-    { location: 'locationB', faciltype: 'typeD', name: 'room '},
-    { location: 'locationA', faciltype: 'typeB', name: 'room '},
-    { location: 'locationC', faciltype: 'typeA', name: 'room '},
-    { location: 'locationA', faciltype: 'typeA', name: 'room '},
-    { location: 'locationD', faciltype: 'typeD', name: 'room '},
-    { location: 'locationD', faciltype: 'typeA', name: 'room '},
-    { location: 'locationD', faciltype: 'typeD', name: 'room '},
-    { location: 'locationA', faciltype: 'typeD', name: 'room '},
-    { location: 'locationC', faciltype: 'typeA', name: 'room '},
-    { location: 'locationD', faciltype: 'typeC', name: 'room '},
-    { location: 'locationA', faciltype: 'typeA', name: 'room '},
-    { location: 'locationA', faciltype: 'typeB', name: 'room '},
-    { location: 'locationB', faciltype: 'typeA', name: 'room '},
-    { location: 'locationB', faciltype: 'typeD', name: 'room '},
-    { location: 'locationC', faciltype: 'typeA', name: 'room '},
-    { location: 'locationB', faciltype: 'typeA', name: 'room '},
-    { location: 'locationA', faciltype: 'typeA', name: 'room '},
-    { location: 'locationC', faciltype: 'typeD', name: 'room '},
-    { location: 'locationC', faciltype: 'typeA', name: 'room '},
-    { location: 'locationD', faciltype: 'typeC', name: 'room '},
-    { location: 'locationA', faciltype: 'typeB', name: 'room '},
-    { location: 'locationD', faciltype: 'typeD', name: 'room '},
-    { location: 'locationB', faciltype: 'typeA', name: 'room '},
-    { location: 'locationA', faciltype: 'typeC', name: 'room '},
-    { location: 'locationB', faciltype: 'typeB', name: 'room '},
-    { location: 'locationD', faciltype: 'typeB', name: 'room '},
-    { location: 'locationB', faciltype: 'typeB', name: 'room '},
-    { location: 'locationA', faciltype: 'typeD', name: 'room '},
-    { location: 'locationB', faciltype: 'typeC', name: 'room '},
+    { location: 'locationA', faciltype: 'typeB', name: 'room'},
+    { location: 'locationB', faciltype: 'typeD', name: 'room'},
+    { location: 'locationA', faciltype: 'typeB', name: 'room'},
+    { location: 'locationC', faciltype: 'typeA', name: 'room'},
+    { location: 'locationA', faciltype: 'typeA', name: 'room'},
+    { location: 'locationD', faciltype: 'typeD', name: 'room'},
+    { location: 'locationD', faciltype: 'typeA', name: 'room'},
+    { location: 'locationD', faciltype: 'typeD', name: 'room'},
+    { location: 'locationA', faciltype: 'typeD', name: 'room'},
+    { location: 'locationC', faciltype: 'typeA', name: 'room'},
+    { location: 'locationD', faciltype: 'typeC', name: 'room'},
+    { location: 'locationA', faciltype: 'typeA', name: 'room'},
+    { location: 'locationA', faciltype: 'typeB', name: 'room'},
+    { location: 'locationB', faciltype: 'typeA', name: 'room'},
+    { location: 'locationB', faciltype: 'typeD', name: 'room'},
+    { location: 'locationC', faciltype: 'typeA', name: 'room'},
+    { location: 'locationB', faciltype: 'typeA', name: 'room'},
+    { location: 'locationA', faciltype: 'typeA', name: 'room'},
+    { location: 'locationC', faciltype: 'typeD', name: 'room'},
+    { location: 'locationC', faciltype: 'typeA', name: 'room'},
+    { location: 'locationD', faciltype: 'typeC', name: 'room'},
+    { location: 'locationA', faciltype: 'typeB', name: 'room'},
+    { location: 'locationD', faciltype: 'typeD', name: 'room'},
+    { location: 'locationB', faciltype: 'typeA', name: 'room'},
+    { location: 'locationA', faciltype: 'typeC', name: 'room'},
+    { location: 'locationB', faciltype: 'typeB', name: 'room'},
+    { location: 'locationD', faciltype: 'typeB', name: 'room'},
+    { location: 'locationB', faciltype: 'typeB', name: 'room'},
+    { location: 'locationA', faciltype: 'typeD', name: 'room'},
+    { location: 'locationB', faciltype: 'typeC', name: 'room'},
 
 ];
 
@@ -68,9 +68,10 @@ function createRooms() {
         $(optiondiv).append(input);
         $(optiondiv).append(label);
         $(containerid).append(optiondiv);
-        console.log(optiondiv.className);
-        console.log(input.className)
-        console.log(label.className)
+        //console.log(optiondiv.className);
+        //console.log(input.className)
+        //console.log(label.className)
+        //console.log(roomArr[i].id);
 
         // roomArr[i].value = '';
         document.getElementById( roomArr[i].id).focus();
