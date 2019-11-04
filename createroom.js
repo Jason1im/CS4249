@@ -1,34 +1,34 @@
 var roomArr = [
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationB', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationC', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationD', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationD', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationD', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationC', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationD', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationB', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationB', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationC', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationB', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationC', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationC', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationD', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationD', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationB', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationB', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationD', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationB', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationA', faciltype: 'seminar room', name: 'room '},
-    { location: 'locationB', faciltype: 'seminar room', name: 'room '},
+    { location: 'locationA', faciltype: 'typeB', name: 'room '},
+    { location: 'locationB', faciltype: 'typeD', name: 'room '},
+    { location: 'locationA', faciltype: 'typeB', name: 'room '},
+    { location: 'locationC', faciltype: 'typeA', name: 'room '},
+    { location: 'locationA', faciltype: 'typeA', name: 'room '},
+    { location: 'locationD', faciltype: 'typeD', name: 'room '},
+    { location: 'locationD', faciltype: 'typeA', name: 'room '},
+    { location: 'locationD', faciltype: 'typeD', name: 'room '},
+    { location: 'locationA', faciltype: 'typeD', name: 'room '},
+    { location: 'locationC', faciltype: 'typeA', name: 'room '},
+    { location: 'locationD', faciltype: 'typeC', name: 'room '},
+    { location: 'locationA', faciltype: 'typeA', name: 'room '},
+    { location: 'locationA', faciltype: 'typeB', name: 'room '},
+    { location: 'locationB', faciltype: 'typeA', name: 'room '},
+    { location: 'locationB', faciltype: 'typeD', name: 'room '},
+    { location: 'locationC', faciltype: 'typeA', name: 'room '},
+    { location: 'locationB', faciltype: 'typeA', name: 'room '},
+    { location: 'locationA', faciltype: 'typeA', name: 'room '},
+    { location: 'locationC', faciltype: 'typeD', name: 'room '},
+    { location: 'locationC', faciltype: 'typeA', name: 'room '},
+    { location: 'locationD', faciltype: 'typeC', name: 'room '},
+    { location: 'locationA', faciltype: 'typeB', name: 'room '},
+    { location: 'locationD', faciltype: 'typeD', name: 'room '},
+    { location: 'locationB', faciltype: 'typeA', name: 'room '},
+    { location: 'locationA', faciltype: 'typeC', name: 'room '},
+    { location: 'locationB', faciltype: 'typeB', name: 'room '},
+    { location: 'locationD', faciltype: 'typeB', name: 'room '},
+    { location: 'locationB', faciltype: 'typeB', name: 'room '},
+    { location: 'locationA', faciltype: 'typeD', name: 'room '},
+    { location: 'locationB', faciltype: 'typeC', name: 'room '},
 
 ];
 
@@ -50,13 +50,15 @@ function createRooms() {
         input.classList.add('custom-control-input');
         input.classList.add('parent-Room-options');        
         input.classList.add('location-'+ roomArr[i].location);
-        
+        input.classList.add('faciltype-'+roomArr[i].faciltype);
+
         var label = document.createElement('label');  // CREATE LABEL.
         label.setAttribute('for', roomArr[i].id);
         label.className += "custom-control-label";
 
         var optiondiv = document.createElement('div');
         optiondiv.className = optiondiv.className + "custom-control custom-checkbox location-"+roomArr[i].location
+        optiondiv.classList.add('faciltype-'+roomArr[i].faciltype);
         
 
         // CREATE A TEXT NODE AND APPEND IT TO THE LABEL.
