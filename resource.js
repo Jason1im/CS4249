@@ -5,6 +5,11 @@ var locationB = false;
 var locationC = false;
 var locationD = false;
 var anyLocation = false;
+var anyFacil = true;
+var facilA = false;
+var facilB = false;
+var facilC = false;
+var facilD = false;
 
 $('#type-checkbox-list :checkbox').click(function (eventObj) {
     $("#type-checkbox-list :checkbox").each(function(){
@@ -12,6 +17,29 @@ $('#type-checkbox-list :checkbox').click(function (eventObj) {
             $(this).prop('checked', false);
         } else {
             typechecked = $(this).prop('checked');
+            anyFacil = !typechecked;
+            facilA = facilB = facilC = facilD = anyFacil;
+            if ($(this).prop('id') == 'typeA') {
+                facilA = typechecked;
+                facilB = false;
+                facilC = false;
+                facilD = false;
+            } else if ($(this).prop('id') == 'typeB') {
+                facilA = false;
+                facilB = typechecked;
+                facilC = false;
+                facilD = false;
+            } else if ($(this).prop('id') == 'typeC') {
+                facilA = false;
+                facilB = false;
+                facilC = typechecked;
+                facilD = false;
+            } else if ($(this).prop('id') == 'typeD') {
+                facilA = false;
+                facilB = false;
+                facilC = false;
+                facilD = typechecked;
+            }
         }
     })
     displayOptions();
@@ -87,7 +115,49 @@ function displayOptions() {
         } else {
             $('.location-locationD').css('display', "none");
             $('.location-locationD').prop('checked', false);
+    }
+
+    if (!anyFacil) {
+        if (facilA) {
+            if (!locationchecked) {
+                $('.faciltype-typeA').css('display', 'inline-flex');
+            }
+            
+        } else {
+            $('.faciltype-typeA').css('display', 'none');
+            $('.faciltype-typeA').prop('checked', false);
         }
+
+        if (facilB) {
+            if (!locationchecked) {
+                $('.faciltype-typeB').css('display', 'inline-flex');
+            }
+            // $('.faciltype-typeB').css('display', 'inline-flex');
+        } else {
+            $('.faciltype-typeB').css('display', 'none');
+            $('.faciltype-typeB').prop('checked', false);
+        }
+
+        if (facilC) {
+            if (!locationchecked) {
+                $('.faciltype-typeC').css('display', 'inline-flex');
+            }
+            //$('.faciltype-typeC').css('display', 'inline-flex');
+        } else {
+            $('.faciltype-typeC').css('display', 'none');
+            $('.faciltype-typeC').prop('checked', false);
+        }
+
+        if (facilD) {
+            if (!locationchecked) {
+                $('.faciltype-typeD').css('display', 'inline-flex');
+            }
+            // $('.faciltype-typeD').css('display', 'inline-flex');
+        } else {
+            $('.faciltype-typeD').css('display', 'none');
+            $('.faciltype-typeD').prop('checked', false);
+        }
+    } 
     //   $('#otherField').attr('required', '');
     //   $('#otherField').attr('data-error', 'This field is required.');
   //  } else {
