@@ -40,7 +40,7 @@ var uid = 0;
 var clickTotal = 0;
 var startTime = 0;
 var autopass = false;
-var attemptsLeft = 1;
+var attemptsLeft = 3;
 var score = 0;
 var taskCode = "";
 
@@ -233,31 +233,122 @@ function sendNetworkLog(
 
 
 function reviewAnswers(taskNum) {
+
+
+    if (taskNum == 1) {
+        var bool = $('#room7').is(":checked"); //check if the room is checked
+        attemptsLeft--;
+        if (bool) {
+            score = score + 1;
+            window.location.href = "task2pre.html?score=" + score + "&task=1B";
+
+            var timeTaken = (new Date).getTime() - startTime;
+            var totalClicks = clickTotal;
+            var attempts = 3 - attemptsLeft;
+            //var eventName = "search";
+            var correctness = 1;
+
+            clickTotal = 0;
+
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+
+            alert("You have successfully cleared this task! Please proceed to the next Task.");
+            return;
+        }
+    }
+    if (taskNum == 2) {
+        var bool = $('#room1').is(":checked"); //check if the room is checked
+        attemptsLeft--;
+        if (bool) {
+            score = score + 1;
+            window.location.href = "task3pre.html?score=" + score + "&task=1C";
+
+            var timeTaken = (new Date).getTime() - startTime;
+            var totalClicks = clickTotal;
+            var attempts = 3 - attemptsLeft;
+            //var eventName = "search";
+            var correctness = 1;
+
+            clickTotal = 0;
+
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            alert("You have successfully cleared this task! Please proceed to the next Task.");
+            return;
+        }
+    }
+    if (taskNum == 3) {
+        var bool = $('#room2').is(":checked"); //check if the room is checked
+        attemptsLeft--;
+        if (bool) {
+            score = score + 1;
+            window.location.href = "end.html?score=" + score;
+
+            var timeTaken = (new Date).getTime() - startTime;
+            var totalClicks = clickTotal;
+            var attempts = 3 - attemptsLeft;
+            //var eventName = "search";
+            var correctness = 1;
+
+            clickTotal = 0;
+
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            alert("You have successfully cleared this task! Please proceed to the next page to receive a code.");
+            return;
+        }
+    }
+
     if (autopass) {
-        // same logic for answer checking. if correct, correctness  =  1.
-        score = score + 1;
+        alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
         if (taskNum == 1) {
             window.location.href = "task2pre.html?score=" + score + "&task=1B";
-        } else if (taskNum == 2) {
-            window.location.href = "task3pre.html?score=" + score + "&task=1C";
-        } else if (taskNum == 3) {
-            window.location.href = "end.html?score=" + score;
-        }
-        var timeTaken = (new Date).getTime() - startTime;
-        var totalClicks = clickTotal;
-        var attempts = 2 - attemptsLeft;
-        //var eventName = "search";
-        var correctness = 1;
-        
-        clickTotal = 0;
 
-        sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
-    } 
+            var timeTaken = (new Date).getTime() - startTime;
+            var totalClicks = clickTotal;
+            var attempts = 3 - attemptsLeft;
+            //var eventName = "search";
+            var correctness = 0;
+
+            clickTotal = 0;
+
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            return;
+        }
+
+        if (taskNum == 2) {
+            window.location.href = "task3pre.html?score=" + score + "&task=1C";
+
+            var timeTaken = (new Date).getTime() - startTime;
+            var totalClicks = clickTotal;
+            var attempts = 3 - attemptsLeft;
+            //var eventName = "search";
+            var correctness = 0;
+
+            clickTotal = 0;
+
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            return;
+        }
+
+        if (taskNum == 3) {
+            window.location.href = "end.html?score=" + score;
+
+            var timeTaken = (new Date).getTime() - startTime;
+            var totalClicks = clickTotal;
+            var attempts = 3 - attemptsLeft;
+            //var eventName = "search";
+            var correctness = 0;
+
+            clickTotal = 0;
+
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            return;
+        }
+    }
+
       // todo: add in logic for answer checking. for now assume wrong
     alert("You have made some wrong selections. Please try again. You have " + attemptsLeft + " attempts left");
       window.location.href = "javascript: void(0)";
-        attemptsLeft--;
-        if (attemptsLeft == 0) {
+        if (attemptsLeft == 1) {
             autopass = true;
         }
  
