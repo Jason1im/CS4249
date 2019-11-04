@@ -86,6 +86,26 @@ body {
     font-size: 20px;
 }
 
+#description {
+    margin: 150px auto;
+    height: 400px;
+    width: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    padding: 30px;
+    font-size: 40px;
+}
+
+#description > p {
+    text-align: center;
+}
+
+
+.taskButton {
+    margin-left: 80%;
+}
+
 #logout-button {
     position: absolute;
     right: 5px;
@@ -93,7 +113,6 @@ body {
 
 #search-button {
     margin-left: 80%;
-
 }
 
 .btn-outline-primary {
