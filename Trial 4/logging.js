@@ -235,15 +235,15 @@ function sendNetworkLog(
 function reviewAnswers(taskNum) {
 
     if (taskNum == 1) {
-        var bool = $('#RoomAC10').is(":checked"); //check if the room is checked
-        var bool2 = $('#start-time-select').find('option:selected').text() == "14:00";
-        var bool3 = $('#end-time-select').find('option:selected').text() == "17:00";
+        var bool = $('#RoomCP10').is(":checked") && $('#RoomCO20').is(":checked") && $('#RoomCM1').is(":checked"); //check if the room is checked
+        var bool2 = $('#start-time-select').find('option:selected').text() == "21:00";
+        var bool3 = $('#end-time-select').find('option:selected').text() == "22:00";
         var startDate = new Date($('#startDate').val());
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "1/15/2020");
+        var bool4 = (answer == "2/25/2020");
 
         attemptsLeft--;
         if (bool && bool2 && bool3 && bool4) {
@@ -261,20 +261,20 @@ function reviewAnswers(taskNum) {
             sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
 
             alert("You have successfully cleared this task! Please proceed to the next Task.");
-            window.location.href = "task2pre.html?score=" + score + "&task=1B";
+            window.location.href = "task2pre.html?score=" + score + "&task=4B";
             return;
         }
     }
     if (taskNum == 2) {
-        var bool = $('#RoomBP3').is(":checked"); //check if the room is checked
+        var bool = $('#RoomBM10').is(":checked") && $('#RoomBC15').is(":checked") && $('#RoomBS11').is(":checked"); //check if the room is checked
         var bool2 = $('#start-time-select').find('option:selected').text() == "8:00";
-        var bool3 = $('#end-time-select').find('option:selected').text() == "14:00";
+        var bool3 = $('#end-time-select').find('option:selected').text() == "11:00";
         var startDate = new Date($('#startDate').val());
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "1/20/2020");
+        var bool4 = (answer == "3/2/2020");
          
         attemptsLeft--;
         if (bool && bool2 && bool3 && bool4) {
@@ -290,20 +290,20 @@ function reviewAnswers(taskNum) {
 
             sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
             alert("You have successfully cleared this task! Please proceed to the next Task.");
-            window.location.href = "task3pre.html?score=" + score + "&task=1C";
+            window.location.href = "task3pre.html?score=" + score + "&task=4C";
             return;
         }
     }
     if (taskNum == 3) {
-        var bool = $('#RoomCO18').is(":checked"); //check if the room is checked
-        var bool2 = $('#start-time-select').find('option:selected').text() == "13:00";
-        var bool3 = $('#end-time-select').find('option:selected').text() == "15:00";
+        var bool = $('#RoomAS2').is(":checked") && $('#RoomCS1').is(":checked") && $('#RoomBS7').is(":checked"); //check if the room is checked
+        var bool2 = $('#start-time-select').find('option:selected').text() == "7:00";
+        var bool3 = $('#end-time-select').find('option:selected').text() == "11:00";
         var startDate = new Date($('#startDate').val());
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "12/25/2019");
+        var bool4 = (answer == "11/22/2019");
 
         //console.log(bool)
         //console.log(bool2)
@@ -333,7 +333,7 @@ function reviewAnswers(taskNum) {
     if (autopass) {
         alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
         if (taskNum == 1) {
-            window.location.href = "task2pre.html?score=" + score + "&task=1B";
+            window.location.href = "task2pre.html?score=" + score + "&task=4B";
 
             var timeTaken = (new Date).getTime() - startTime;
             var totalClicks = clickTotal;
@@ -348,7 +348,7 @@ function reviewAnswers(taskNum) {
         }
 
         if (taskNum == 2) {
-            window.location.href = "task3pre.html?score=" + score + "&task=1C";
+            window.location.href = "task3pre.html?score=" + score + "&task=4C";
 
             var timeTaken = (new Date).getTime() - startTime;
             var totalClicks = clickTotal;
@@ -388,13 +388,13 @@ function reviewAnswers(taskNum) {
 }
 
 function goToTask1() {
-    window.location.href = "index.html?score=" + score + "&task=1A";
+    window.location.href = "index.html?score=" + score + "&task=4A";
 }
 
 function goToTask2() {
-    window.location.href = "index2.html?score=" + score + "&task=1B";
+    window.location.href = "index2.html?score=" + score + "&task=4B";
 }
 
 function goToTask3() {
-    window.location.href = "index3.html?score=" + score + "&task=1C";
+    window.location.href = "index3.html?score=" + score + "&task=4C";
 }
