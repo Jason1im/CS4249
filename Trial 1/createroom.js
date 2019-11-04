@@ -328,7 +328,8 @@ function createRooms() {
 
         var optiondiv = document.createElement('div');
         optiondiv.className = optiondiv.className + "custom-control custom-checkbox location-"+roomArr[i].location.replace(/ /g, '')
-        optiondiv.classList.add('faciltype-'+roomArr[i].faciltype.replace(/ /g, ''));
+        optiondiv.classList.add('faciltype-' + roomArr[i].faciltype.replace(/ /g, ''));
+        optiondiv.setAttribute('style', "padding-left: 40px; padding-top: 5px;");
         
         // CREATE A TEXT NODE AND APPEND IT TO THE LABEL.
         label.appendChild(document.createTextNode(roomArr[i].name));

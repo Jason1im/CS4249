@@ -31,24 +31,24 @@
                     <div>
                         <p>Facilities/Resources Type</p>
                         <p style="font-size: 12px;">Please select one facility type</p>
-                        <div class="checkbox-list" id="type-checkbox-list" style="display:inline-flex;">
-                            <div class="custom-control custom-checkbox">
+                        <div class="checkbox-list" id="type-checkbox-list" style="display:inline-flex;flex-wrap:wrap;">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="StudyRoom">
                                 <label class="custom-control-label" for="StudyRoom">Study Room</label>
                             </div>
-                            <div class="custom-control custom-checkbox">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="ConferenceRoom">
                                 <label class="custom-control-label" for="ConferenceRoom">Conference Room</label>
                             </div>
-                            <div class="custom-control custom-checkbox">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="MusicRoom">
                                 <label class="custom-control-label" for="MusicRoom">Music Room</label>
                             </div>
-                            <div class="custom-control custom-checkbox">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="PracticeRoom">
                                 <label class="custom-control-label" for="PracticeRoom">Practice Room</label>
                             </div>
-                            <div class="custom-control custom-checkbox">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="OpenSpace">
                                 <label class="custom-control-label" for="OpenSpace">Open Space</label>
                             </div>
@@ -61,19 +61,19 @@
                     <p>Location</p>
                     <div style="height: 60px; overflow: auto;">
                         <div class="checkbox-list" id="Location-options">
-                            <div class="custom-control custom-checkbox">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="anyBuilding">
                                 <label class="custom-control-label" for="anyBuilding">Any Building</label>
                             </div>
-                            <div class="custom-control custom-checkbox">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="BuildingA">
                                 <label class="custom-control-label" for="BuildingA">Building A</label>
                             </div>
-                            <div class="custom-control custom-checkbox">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="BuildingB">
                                 <label class="custom-control-label" for="BuildingB">Building B</label>
                             </div>
-                            <div class="custom-control custom-checkbox">
+                            <div class="custom-control custom-checkbox" style="padding-left: 40px; padding-top: 5px;">
                                 <input type="checkbox" class="custom-control-input" id="BuildingC">
                                 <label class="custom-control-label" for="BuildingC">Building C</label>
                             </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div id="Facility/Resource">
                     <p>Facility/Resource(s)*:</p>
-                    <div style="height: 400px; overflow: auto;">
+                    <div style="height: 120px; overflow: auto;">
                         <div class="checkbox-list" id="Room-options" style="display: none;">
                             <script src="createroom.js"></script>
                             <script>createRooms();</script>
