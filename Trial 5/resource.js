@@ -42,7 +42,7 @@ $('#type-dropdown-list').change(function () {
         facilD = true;
         facilA = facilB = facilC = facilE = false;
     }
-    if (this.value == "Open Space ") {
+    if (this.value == "Open Space") {
         typechecked = true;
         anyFacil = false;
         facilE = true;
@@ -157,28 +157,28 @@ function displayOptions() {
    // if (Buildingchecked || typechecked) {
         $('#Room-options').show();
         if (buildingA) {
-            $('.location-BuildingA').css('display', "inline-flex");
+            $('.location-BuildingA').css('display', "block");
         } else {
             $('.location-BuildingA').css('display', "none");
            // $('.location-BuildingA').prop('checked', false);
         }
 
         if (buildingB) {
-            $('.location-BuildingB').css('display', "inline-flex");
+            $('.location-BuildingB').css('display', "block");
         } else {
             $('.location-BuildingB').css('display', "none");
             //$('.location-BuildingB').prop('checked', false);
         }
 
         if (buildingC) {
-            $('.location-BuildingC').css('display', "inline-flex");
+            $('.location-BuildingC').css('display', "block");
         } else {
             $('.location-BuildingC').css('display', "none");
             //$('.location-BuildingC').prop('checked', false);
         }
 
         if (buildingD) {
-            $('.location-locationD').css('display', "inline-flex");
+            $('.location-locationD').css('display', "block");
         } else {
             $('.location-locationD').css('display', "none");
             //$('.location-locationD').prop('checked', false);
@@ -187,7 +187,7 @@ function displayOptions() {
     if (!anyFacil) {
         if (facilA) {
             if (!Buildingchecked) {
-                $('.faciltype-StudyRoom').css('display', 'inline-flex');
+                $('.faciltype-StudyRoom').css('display', 'block');
             }
             
         } else {
@@ -197,7 +197,7 @@ function displayOptions() {
 
         if (facilB) {
             if (!Buildingchecked) {
-                $('.faciltype-ConferenceRoom').css('display', 'inline-flex');
+                $('.faciltype-ConferenceRoom').css('display', 'block');
             }
             // $('.faciltype-typeB').css('display', 'inline-flex');
         } else {
@@ -207,7 +207,7 @@ function displayOptions() {
 
         if (facilC) {
             if (!Buildingchecked) {
-                $('.faciltype-MusicRoom').css('display', 'inline-flex');
+                $('.faciltype-MusicRoom').css('display', 'block');
             }
             //$('.faciltype-typeC').css('display', 'inline-flex');
         } else {
@@ -217,7 +217,7 @@ function displayOptions() {
 
         if (facilD) {
             if (!Buildingchecked) {
-                $('.faciltype-PracticeRoom').css('display', 'inline-flex');
+                $('.faciltype-PracticeRoom').css('display', 'block');
             }
         } else {
             $('.faciltype-PracticeRoom').css('display', 'none');
@@ -225,7 +225,7 @@ function displayOptions() {
         }
         if (facilE) {
             if (!Buildingchecked) {
-                $('.faciltype-OpenSpace').css('display', 'inline-flex');
+                $('.faciltype-OpenSpace').css('display', 'block');
             }
         } else {
             $('.faciltype-OpenSpace').css('display', 'none');
