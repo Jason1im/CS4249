@@ -235,7 +235,14 @@ function sendNetworkLog(
 function reviewAnswers(taskNum) {
 
     if (taskNum == 1) {
-        var bool = JSON.stringify($('#Room-options').val()) == JSON.stringify(["Room BM10"]); //check if the room is checked
+        var x = $('#Room-options').val();
+        var y = "Room BM10";
+        var bool = false;
+        for (var i = 0; i < x.length; i++) {
+            if (x[i] == y) {
+                bool = true;
+            }
+        }
         var bool2 = $('#start-time-select').find('option:selected').text() == "12:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "15:00";
         var startDate = new Date($('#startDate').val());
@@ -266,7 +273,14 @@ function reviewAnswers(taskNum) {
         }
     }
     if (taskNum == 2) {
-        var bool = JSON.stringify($('#Room-options').val()) == JSON.stringify(["Room AO14"]); //check if the room is checked
+        var x = $('#Room-options').val();
+        var y = "Room AO14";
+        var bool = false;
+        for (var i = 0; i < x.length; i++) {
+            if (x[i] == y) {
+                bool = true;
+            }
+        }
         var bool2 = $('#start-time-select').find('option:selected').text() == "20:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "21:00";
         var startDate = new Date($('#startDate').val());
@@ -295,7 +309,14 @@ function reviewAnswers(taskNum) {
         }
     }
     if (taskNum == 3) {
-        var bool = JSON.stringify($('#Room-options').val()) == JSON.stringify(["Room BS13"]); //check if the room is checked
+        var x = $('#Room-options').val();
+        var y = "Room BS13";
+        var bool = false;
+        for (var i = 0; i < x.length; i++) {
+            if (x[i] == y) {
+                bool = true;
+            }
+        }
         var bool2 = $('#start-time-select').find('option:selected').text() == "10:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "13:00";
         var startDate = new Date($('#startDate').val());
