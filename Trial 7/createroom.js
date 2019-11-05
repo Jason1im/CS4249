@@ -342,3 +342,42 @@ function createRooms() {
         document.getElementById( roomArr[i].id).focus();
     }
 }
+
+
+function createRoomsList() {
+    var containerid ='#Room-options';
+    for (var i=0; i<roomArr.length; i++) {
+        var option = document.createElement('option');  // CREATE CHECK BOX.
+        option.setAttribute('id', roomArr[i].id);
+        option.setAttribute('location', roomArr[i].location);
+        option.setAttribute('type', 'checkbox');
+        option.setAttribute('faciltype', roomArr[i].faciltype);
+        option.setAttribute('name', roomArr[i].name); 
+
+        // option.classList.add('custom-control-option');
+        // option.classList.add('parent-Room-options');   
+        option.classList.add('location-'+ roomArr[i].location.replace(/ /g, ''));
+        option.classList.add('faciltype-'+roomArr[i].faciltype.replace(/ /g, ''));
+
+        // var label = document.createElement('label');  // CREATE LABEL.
+        // label.setAttribute('for', roomArr[i].id);
+        // label.className += "custom-control-label";
+
+        // var optiondiv = document.createElement('div');
+        // optiondiv.className = optiondiv.className + "custom-control custom-checkbox location-"+roomArr[i].location.replace(/ /g, '')
+        // optiondiv.classList.add('faciltype-'+roomArr[i].faciltype.replace(/ /g, ''));
+        
+        // // CREATE A TEXT NODE AND APPEND IT TO THE LABEL.
+        option.appendChild(document.createTextNode(roomArr[i].name));
+
+        // // APPEND THE NEWLY CREATED CHECKBOX AND LABEL TO THE <p> ELEMENT.
+        $(containerid).append(option);
+
+
+        console.log(option.className)
+
+        // roomArr[i].value = ';
+        document.getElementById( roomArr[i].id).focus();
+    }
+
+}

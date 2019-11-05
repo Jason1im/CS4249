@@ -4,15 +4,19 @@
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
     <title>Sample HTML5</title>
 </head>
 
 <body>
-    <h1>TASK 1</h1>
-    <div id="search-button">
-        <a class="btn btn-outline-primary btn-sm" onclick="goToTask1(); return false;">Go to task</a>
+    <div id="description">
+        <h1 style>TASK 1</h1>
+
+        <p> Check if <b>room CM12</b> which is of <b>Music Room Type</b> and in <b>Building C</b> is free on <b>12/24/2019</b> from <b>17:00 to 18:00</b>. </p>
+        <div class="taskButton">
+            <a class="btn btn-outline-primary btn-lg" onclick="goToTask1(); return false;">Go to task</a>
+        </div>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
