@@ -36,7 +36,7 @@ var GLOBAL_STATE_TO_LOG = function() {
   };
 };
 
-var uid = 0;
+var uid = "";
 var clickTotal = 0;
 var startTime = 0;
 var autopass = false;
@@ -47,7 +47,6 @@ var taskCode = "";
 var loggingjs = (function() { // Immediately-Invoked Function Expression (IIFE); ref: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
 
 // A persistent unique id for the user.
-    uid = getUniqueId();
     startTime = (new Date).getTime();
     var urlParams = new URLSearchParams(window.location.search);
     var carryOverScore = urlParams.get('score');
@@ -59,6 +58,7 @@ var loggingjs = (function() { // Immediately-Invoked Function Expression (IIFE);
     }
     //console.log(score);
     taskCode = urlParams.get('task');
+    uid = urlParams.get('id');
 
 // Hooks up all the event listeners.
 function hookEventsToLog() {
@@ -278,7 +278,7 @@ function reviewAnswers(taskNum) {
             sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
 
             alert("You have successfully cleared this task! Please proceed to the next Task.");
-            window.location.href = "task2pre.html?score=" + score + "&task=7B";
+            window.location.href = "task2pre.html?score=" + score + "&task=7B" + "&id=" + uid;
             return;
         }
     }
@@ -324,7 +324,7 @@ function reviewAnswers(taskNum) {
 
             sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
             alert("You have successfully cleared this task! Please proceed to the next Task.");
-            window.location.href = "task3pre.html?score=" + score + "&task=7C";
+            window.location.href = "task3pre.html?score=" + score + "&task=7C" + "&id=" + uid;
             return;
         }
     }
@@ -376,7 +376,7 @@ function reviewAnswers(taskNum) {
 
             sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
             alert("You have successfully cleared this task! Please proceed to the next page to receive a code.");
-            window.location.href = "end.html?score=" + score;
+            window.location.href = "end.html?score=" + score + "&id=" + uid;
             return;
         }
     }
@@ -384,7 +384,7 @@ function reviewAnswers(taskNum) {
     if (autopass) {
         alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
         if (taskNum == 1) {
-            window.location.href = "task2pre.html?score=" + score + "&task=7B";
+            window.location.href = "task2pre.html?score=" + score + "&task=7B" + "&id=" + uid;
 
             var timeTaken = (new Date).getTime() - startTime;
             var totalClicks = clickTotal;
@@ -399,7 +399,7 @@ function reviewAnswers(taskNum) {
         }
 
         if (taskNum == 2) {
-            window.location.href = "task3pre.html?score=" + score + "&task=7C";
+            window.location.href = "task3pre.html?score=" + score + "&task=7C" + "&id=" + uid;
 
             var timeTaken = (new Date).getTime() - startTime;
             var totalClicks = clickTotal;
@@ -414,7 +414,7 @@ function reviewAnswers(taskNum) {
         }
 
         if (taskNum == 3) {
-            window.location.href = "end.html?score=" + score;
+            window.location.href = "end.html?score=" + score + "&id=" + uid;
 
             var timeTaken = (new Date).getTime() - startTime;
             var totalClicks = clickTotal;
@@ -439,13 +439,13 @@ function reviewAnswers(taskNum) {
 }
 
 function goToTask1() {
-    window.location.href = "index.html?score=" + score + "&task=7A";
+    window.location.href = "index.html?score=" + score + "&task=7A" + "&id=" + uid;
 }
 
 function goToTask2() {
-    window.location.href = "index2.html?score=" + score + "&task=7B";
+    window.location.href = "index2.html?score=" + score + "&task=7B" + "&id=" + uid;
 }
 
 function goToTask3() {
-    window.location.href = "index3.html?score=" + score + "&task=7C";
+    window.location.href = "index3.html?score=" + score + "&task=7C" + "&id=" + uid;
 }
