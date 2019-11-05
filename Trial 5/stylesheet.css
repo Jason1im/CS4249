@@ -33,7 +33,7 @@ body {
     overflow: auto;
 }
 #type-dropdown-list > option, #location-dropdown-list > option {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #Room-options option {
