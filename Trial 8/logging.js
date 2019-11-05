@@ -236,21 +236,31 @@ function reviewAnswers(taskNum) {
 
     if (taskNum == 1) {
         var x = $('#Room-options').val();
-        var y = "Room BM10";
-        var bool = false;
+        var y1 = "Room CP10";
+        var y2 = "Room CO20";
+        var y3 = "Room CM1";
+        var count = 0;
+
         for (var i = 0; i < x.length; i++) {
-            if (x[i] == y) {
-                bool = true;
+            if (x[i] == y1) {
+                count++;
+            }
+            if (x[i] == y2) {
+                count++;
+            }
+            if (x[i] == y3) {
+                count++;
             }
         }
-        var bool2 = $('#start-time-select').find('option:selected').text() == "12:00";
+        var bool = (count == 3);
+        var bool2 = $('#start-time-select').find('option:selected').text() == "14:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "15:00";
         var startDate = new Date($('#startDate').val());
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "2/24/2020");
+        var bool4 = (answer == "2/25/2020");
 
         attemptsLeft--;
         if (bool && bool2 && bool3 && bool4) {
@@ -268,27 +278,37 @@ function reviewAnswers(taskNum) {
             sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
 
             alert("You have successfully cleared this task! Please proceed to the next Task.");
-            window.location.href = "task2pre.html?score=" + score + "&task=5B";
+            window.location.href = "task2pre.html?score=" + score + "&task=8B";
             return;
         }
     }
     if (taskNum == 2) {
         var x = $('#Room-options').val();
-        var y = "Room AO14";
-        var bool = false;
+        var y1 = "Room BM10";
+        var y2 = "Room BC15";
+        var y3 = "Room BS11";
+        var count = 0;
+
         for (var i = 0; i < x.length; i++) {
-            if (x[i] == y) {
-                bool = true;
+            if (x[i] == y1) {
+                count++;
+            }
+            if (x[i] == y2) {
+                count++;
+            }
+            if (x[i] == y3) {
+                count++;
             }
         }
-        var bool2 = $('#start-time-select').find('option:selected').text() == "20:00";
-        var bool3 = $('#end-time-select').find('option:selected').text() == "21:00";
+        var bool = (count == 3);
+        var bool2 = $('#start-time-select').find('option:selected').text() == "8:00";
+        var bool3 = $('#end-time-select').find('option:selected').text() == "11:00";
         var startDate = new Date($('#startDate').val());
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "11/29/2019");
+        var bool4 = (answer == "3/2/2020");
          
         attemptsLeft--;
         if (bool && bool2 && bool3 && bool4) {
@@ -304,27 +324,37 @@ function reviewAnswers(taskNum) {
 
             sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
             alert("You have successfully cleared this task! Please proceed to the next Task.");
-            window.location.href = "task3pre.html?score=" + score + "&task=5C";
+            window.location.href = "task3pre.html?score=" + score + "&task=8C";
             return;
         }
     }
     if (taskNum == 3) {
         var x = $('#Room-options').val();
-        var y = "Room BS13";
-        var bool = false;
+        var y1 = "Room BM2";
+        var y2 = "Room BM8";
+        var y3 = "Room CM13";
+        var count = 0;
+
         for (var i = 0; i < x.length; i++) {
-            if (x[i] == y) {
-                bool = true;
+            if (x[i] == y1) {
+                count++;
+            }
+            if (x[i] == y2) {
+                count++;
+            }
+            if (x[i] == y3) {
+                count++;
             }
         }
-        var bool2 = $('#start-time-select').find('option:selected').text() == "10:00";
-        var bool3 = $('#end-time-select').find('option:selected').text() == "13:00";
+        var bool = (count == 3);
+        var bool2 = $('#start-time-select').find('option:selected').text() == "7:00";
+        var bool3 = $('#end-time-select').find('option:selected').text() == "11:00";
         var startDate = new Date($('#startDate').val());
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "12/31/2019");
+        var bool4 = (answer == "11/28/2019");
 
         //console.log(bool)
         //console.log(bool2)
@@ -354,7 +384,7 @@ function reviewAnswers(taskNum) {
     if (autopass) {
         alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
         if (taskNum == 1) {
-            window.location.href = "task2pre.html?score=" + score + "&task=5B";
+            window.location.href = "task2pre.html?score=" + score + "&task=8B";
 
             var timeTaken = (new Date).getTime() - startTime;
             var totalClicks = clickTotal;
@@ -369,7 +399,7 @@ function reviewAnswers(taskNum) {
         }
 
         if (taskNum == 2) {
-            window.location.href = "task3pre.html?score=" + score + "&task=5C";
+            window.location.href = "task3pre.html?score=" + score + "&task=8C";
 
             var timeTaken = (new Date).getTime() - startTime;
             var totalClicks = clickTotal;
@@ -409,13 +439,13 @@ function reviewAnswers(taskNum) {
 }
 
 function goToTask1() {
-    window.location.href = "index.html?score=" + score + "&task=5A";
+    window.location.href = "index.html?score=" + score + "&task=8A";
 }
 
 function goToTask2() {
-    window.location.href = "index2.html?score=" + score + "&task=5B";
+    window.location.href = "index2.html?score=" + score + "&task=8B";
 }
 
 function goToTask3() {
-    window.location.href = "index3.html?score=" + score + "&task=5C";
+    window.location.href = "index3.html?score=" + score + "&task=8C";
 }
