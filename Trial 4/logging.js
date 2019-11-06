@@ -243,7 +243,7 @@ function reviewAnswers(taskNum) {
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "1/5/2020");
+        var bool4 = (answer == "2/25/2020");
 
         attemptsLeft--;
         if (bool && bool2 && bool3 && bool4) {
@@ -274,7 +274,7 @@ function reviewAnswers(taskNum) {
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "1/5/2020");
+        var bool4 = (answer == "3/2/2020");
          
         attemptsLeft--;
         if (bool && bool2 && bool3 && bool4) {
@@ -303,7 +303,7 @@ function reviewAnswers(taskNum) {
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "1/5/2020");
+        var bool4 = (answer == "11/22/2019");
 
         //console.log(bool)
         //console.log(bool2)
