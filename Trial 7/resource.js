@@ -12,6 +12,8 @@ var facilC = false;
 var facilD = false;
 var facilE = false;
 
+if ( $('#startDate')[0].type != 'date' ) $('#startDate').datepicker();
+
 $('#type-dropdown-list').change(function () {
     if (this.value == "Choose a facility type") {
         typechecked = false;
