@@ -12,6 +12,8 @@ var facilC = false;
 var facilD = false;
 var facilE = false;
 
+if ( $('#startDate')[0].type != 'date' ) $('#startDate').datepicker();
+
 $('#type-checkbox-list :checkbox').click(function (eventObj) {
     $("#type-checkbox-list :checkbox").each(function(){
         if ($(this).prop('id') != eventObj.target.id) {
