@@ -383,6 +383,14 @@ function reviewAnswers(taskNum) {
 
     if (autopass) {
         alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
+        var startDate = new Date($('#startDate').val());
+        var day = startDate.getDate();
+        var month = startDate.getMonth() + 1;
+        var year = startDate.getFullYear();
+        var answer = month + "/" + day + "/" + year;
+        var starttime = $('#start-time-select').find('option:selected').text();
+        var endtime = $('#end-time-select').find('option:selected').text();
+        var ansString = answer + " " + starttime + " "+ endtime + " " + $('#Room-options').val();
         if (taskNum == 1) {
             window.location.href = "task2pre.html?score=" + score + "&task=8B" + "&id=" + uid;
 

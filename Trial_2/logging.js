@@ -331,52 +331,65 @@ function reviewAnswers(taskNum) {
     }
 
     if (autopass) {
-        alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
-        if (taskNum == 1) {
-            window.location.href = "task2pre.html?score=" + score + "&task=2B" + "&id=" + uid;
-
-            var timeTaken = (new Date).getTime() - startTime;
-            var totalClicks = clickTotal;
-            var attempts = 3 - attemptsLeft;
-            //var eventName = "search";
-            var correctness = 0;
-
-            clickTotal = 0;
-
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
-            return;
+      alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
+      var startDate = new Date($('#startDate').val());
+      var day = startDate.getDate();
+      var month = startDate.getMonth() + 1;
+      var year = startDate.getFullYear();
+      var answer = month + "/" + day + "/" + year;
+      var starttime = $('#start-time-select').find('option:selected').text();
+      var endtime = $('#end-time-select').find('option:selected').text();
+      var ansString = answer + " " + starttime + " "+ endtime + " ";
+      $("#Room-options :checkbox").each(function(){
+        if ($(this).is(":checked")) {
+          ansString = ansString + $(this).prop('id') + " ";
         }
+      });
+      if (taskNum == 1) {
+          window.location.href = "task2pre.html?score=" + score + "&task=3B" + "&id=" + uid;
 
-        if (taskNum == 2) {
-            window.location.href = "task3pre.html?score=" + score + "&task=2C" + "&id=" + uid;
+          var timeTaken = (new Date).getTime() - startTime;
+          var totalClicks = clickTotal;
+          var attempts = 3 - attemptsLeft;
+    
+          var correctness = 0;
 
-            var timeTaken = (new Date).getTime() - startTime;
-            var totalClicks = clickTotal;
-            var attempts = 3 - attemptsLeft;
-            //var eventName = "search";
-            var correctness = 0;
+          clickTotal = 0;
 
-            clickTotal = 0;
+          sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+          return;
+      }
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
-            return;
-        }
+      if (taskNum == 2) {
+          window.location.href = "task3pre.html?score=" + score + "&task=3C" + "&id=" + uid;
 
-        if (taskNum == 3) {
-            window.location.href = "end.html?score=" + score + "&id=" + uid;
+          var timeTaken = (new Date).getTime() - startTime;
+          var totalClicks = clickTotal;
+          var attempts = 3 - attemptsLeft;
+    
+          var correctness = 0;
 
-            var timeTaken = (new Date).getTime() - startTime;
-            var totalClicks = clickTotal;
-            var attempts = 3 - attemptsLeft;
-            //var eventName = "search";
-            var correctness = 0;
+          clickTotal = 0;
 
-            clickTotal = 0;
+          sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+          return;
+      }
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
-            return;
-        }
-    }
+      if (taskNum == 3) {
+          window.location.href = "end.html?score=" + score + "&id=" + uid;
+
+          var timeTaken = (new Date).getTime() - startTime;
+          var totalClicks = clickTotal;
+          var attempts = 3 - attemptsLeft;
+    
+          var correctness = 0;
+
+          clickTotal = 0;
+
+          sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+          return;
+      }
+  }
 
       // todo: add in logic for answer checking. for now assume wrong
     alert("You have made some wrong selections. Please try again. You have " + attemptsLeft + " attempts left");
