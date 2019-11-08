@@ -378,7 +378,7 @@ function reviewAnswers(taskNum) {
               }
             });
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score, ansString);
             return;
         }
 

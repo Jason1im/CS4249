@@ -333,18 +333,18 @@ function reviewAnswers(taskNum) {
     if (autopass) {
         alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
         var startDate = new Date($('#startDate').val());
-      var day = startDate.getDate();
-      var month = startDate.getMonth() + 1;
-      var year = startDate.getFullYear();
-      var answer = month + "/" + day + "/" + year;
-      var starttime = $('#start-time-select').find('option:selected').text();
-      var endtime = $('#end-time-select').find('option:selected').text();
-      var ansString = answer + " " + starttime + " "+ endtime + " ";
-      $("#Room-options :checkbox").each(function(){
-        if ($(this).is(":checked")) {
-          ansString = ansString + $(this).prop('id') + " ";
-        }
-      });
+        var day = startDate.getDate();
+        var month = startDate.getMonth() + 1;
+        var year = startDate.getFullYear();
+        var answer = month + "/" + day + "/" + year;
+        var starttime = $('#start-time-select').find('option:selected').text();
+        var endtime = $('#end-time-select').find('option:selected').text();
+        var ansString = answer + " " + starttime + " "+ endtime + " ";
+        $("#Room-options :checkbox").each(function(){
+          if ($(this).is(":checked")) {
+            ansString = ansString + $(this).prop('id') + " ";
+          }
+        });
         if (taskNum == 1) {
             window.location.href = "task2pre.html?score=" + score + "&task=1B" + "&id=" + uid;
 
@@ -356,7 +356,7 @@ function reviewAnswers(taskNum) {
 
             clickTotal = 0;
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score, ansString);
             return;
         }
 
