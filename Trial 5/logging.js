@@ -249,11 +249,18 @@ function reviewAnswers(taskNum) {
         var bool2 = $('#start-time-select').find('option:selected').text() == "12:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "15:00";
         var startDate = new Date($('#startDate').val());
+        startDate.setHours(0, 0, 0, 0);
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
         var answer = month + "/" + day + "/" + year;
-        var bool4 = (answer == "2/24/2020");
+        var correctDate = new Date("2/24/2020");
+        correctDate.setHours(0, 0, 0, 0);
+
+        var bool4 = ( startDate.getTime() == correctDate.getTime());
+        console.log(startDate.toString());
+        console.log(correctDate.toString())
+        console.log (bool4);
 
         attemptsLeft--;
         if (bool && bool2 && bool3 && bool4) {
@@ -353,7 +360,6 @@ function reviewAnswers(taskNum) {
             return;
         }
     }
-
     if (autopass) {
         alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
         var startDate = new Date($('#startDate').val());
@@ -380,6 +386,8 @@ function reviewAnswers(taskNum) {
                 ansString = ansString + $(this).prop('id') + " ";
               }
             });
+            console.log("checking date")
+            console.log($('#startDate').val());
 
             sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score, ansString);
             return;
