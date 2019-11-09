@@ -205,30 +205,33 @@ return {
 
 
 function sendNetworkLog(
-    uid,
-    timeTaken,
-    totalClicks,
-    numberOfAttempts,
-    scoreForThisTask,
-    taskCode,
-    totalScoreForThisTrialSoFar) {
-    var formid = "e/1FAIpQLSeKjGzo_yGFp5wanbRIi2N0M1XFy2No9UjjYwNOSLqdJAcOmw";
-    var data = {
-        "entry.1021637610": uid,
-        "entry.1751317868": timeTaken,
-        "entry.1761723561": totalClicks,
-        "entry.1278555973": numberOfAttempts,
-        "entry.1529203773": scoreForThisTask,
-        "entry.1630418402": taskCode,
-        "entry.613301231": totalScoreForThisTrialSoFar
-    };
-    var params = [];
-    for (key in data) {
-        params.push(key + "=" + encodeURIComponent(data[key]));
-    }
-    // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
-    (new Image).src = "https://docs.google.com/forms/d/" + formid +
-        "/formResponse?" + params.join("&");
+  uid,
+  timeTaken,
+  totalClicks,
+  numberOfAttempts,
+  scoreForThisTask,
+  taskCode,
+  totalScoreForThisTrialSoFar,
+  answerFromUser) {
+var formid = "e/1FAIpQLSeMTHpXueC-10DI5mPSUDmJoVNQqAz4mUOTgS_PPr9Dgfmzag";
+var data = {
+  "entry.1946410942": uid,
+  "entry.74613006": timeTaken,
+  "entry.678269898": totalClicks,
+  "entry.429085135": numberOfAttempts,
+  "entry.873705970": scoreForThisTask,
+  "entry.230343975": taskCode,
+  "entry.1699343754": totalScoreForThisTrialSoFar,
+  "entry.778885727": answerFromUser
+};
+var params = [];
+for (key in data) {
+  params.push(key + "=" + encodeURIComponent(data[key]));
+}
+
+// Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
+(new Image).src = "https://docs.google.com/forms/d/" + formid +
+   "/formResponse?" + params.join("&");
 }
 
 
@@ -265,7 +268,7 @@ function reviewAnswers(taskNum) {
 
             clickTotal = 0;
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score, "");
 
             alert("You have successfully cleared this task! Please proceed to the next Task.");
             window.location.href = "task2pre.html?score=" + score + "&task=5B" + "&id=" + uid;
@@ -302,7 +305,7 @@ function reviewAnswers(taskNum) {
 
             clickTotal = 0;
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score,'');
             alert("You have successfully cleared this task! Please proceed to the next Task.");
             window.location.href = "task3pre.html?score=" + score + "&task=5C" + "&id=" + uid;
             return;
@@ -344,7 +347,7 @@ function reviewAnswers(taskNum) {
 
             clickTotal = 0;
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score,'');
             alert("You have successfully cleared this task! Please proceed to the next page to receive a code.");
             window.location.href = "end.html?score=" + score + "&id=" + uid;
             return;
@@ -393,7 +396,7 @@ function reviewAnswers(taskNum) {
 
             clickTotal = 0;
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score, ansString);
             return;
         }
 
@@ -408,7 +411,7 @@ function reviewAnswers(taskNum) {
 
             clickTotal = 0;
 
-            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score);
+            sendNetworkLog(uid, timeTaken, totalClicks, attempts, correctness, taskCode, score, ansString);
             return;
         }
     }
