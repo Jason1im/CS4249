@@ -258,7 +258,7 @@ function reviewAnswers(taskNum) {
         var bool = (count == 3);
         var bool2 = $('#start-time-select').find('option:selected').text() == "20:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "22:00";
-        var startDate = new Date($('#startDate').val());
+        var startDate = new Date($('#startDate').val().replace('-', '/'));
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
@@ -306,7 +306,7 @@ function reviewAnswers(taskNum) {
         var bool = (count == 3);
         var bool2 = $('#start-time-select').find('option:selected').text() == "8:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "11:00";
-        var startDate = new Date($('#startDate').val());
+        var startDate = new Date($('#startDate').val().replace('-', '/'));
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
@@ -352,7 +352,7 @@ function reviewAnswers(taskNum) {
         var bool = (count == 3);
         var bool2 = $('#start-time-select').find('option:selected').text() == "11:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "15:00";
-        var startDate = new Date($('#startDate').val());
+        var startDate = new Date($('#startDate').val().replace('-', '/'));
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
@@ -386,7 +386,7 @@ function reviewAnswers(taskNum) {
 
     if (autopass) {
         alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
-        var startDate = new Date($('#startDate').val());
+        var startDate = new Date($('#startDate').val().replace('-', '/'));
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
