@@ -241,7 +241,7 @@ function reviewAnswers(taskNum) {
         var bool = $('#RoomCP10').is(":checked") && $('#RoomCO20').is(":checked") && $('#RoomCM1').is(":checked"); //check if the room is checked
         var bool2 = $('#start-time-select').find('option:selected').text() == "21:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "22:00";
-        var startDate = new Date($('#startDate').val().replace('-', '/'));
+        var startDate = new Date($('#startDate').val().replace(/-/g, '\/'));
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
@@ -272,7 +272,7 @@ function reviewAnswers(taskNum) {
         var bool = $('#RoomBM10').is(":checked") && $('#RoomBC15').is(":checked") && $('#RoomBS11').is(":checked"); //check if the room is checked
         var bool2 = $('#start-time-select').find('option:selected').text() == "8:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "11:00";
-        var startDate = new Date($('#startDate').val().replace('-', '/'));
+        var startDate = new Date($('#startDate').val().replace(/-/g, '\/'));
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
@@ -301,7 +301,7 @@ function reviewAnswers(taskNum) {
         var bool = $('#RoomAS2').is(":checked") && $('#RoomCS1').is(":checked") && $('#RoomBS7').is(":checked"); //check if the room is checked
         var bool2 = $('#start-time-select').find('option:selected').text() == "7:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "11:00";
-        var startDate = new Date($('#startDate').val().replace('-', '/'));
+        var startDate = new Date($('#startDate').val().replace(/-/g, '\/'));
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
@@ -335,7 +335,7 @@ function reviewAnswers(taskNum) {
 
     if (autopass) {
         alert("You have made some wrong selections. You have ran out of attempts. Please move on to the next task.");
-        var startDate = new Date($('#startDate').val().replace('-', '/'));
+        var startDate = new Date($('#startDate').val().replace(/-/g, '\/'));
         var day = startDate.getDate();
         var month = startDate.getMonth() + 1;
         var year = startDate.getFullYear();
