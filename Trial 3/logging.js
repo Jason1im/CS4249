@@ -294,7 +294,7 @@ function reviewAnswers(taskNum) {
             return;
         }
     }
-    if (taskNum == 3) {s
+    if (taskNum == 3) {
         var bool = $('#RoomAS5').is(":checked") && $('#RoomAC10').is(":checked") && $('#RoomAM1').is(":checked"); //check if the room is checked
         var bool2 = $('#start-time-select').find('option:selected').text() == "13:00";
         var bool3 = $('#end-time-select').find('option:selected').text() == "14:00";
