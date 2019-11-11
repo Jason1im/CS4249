@@ -1,0 +1,164 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+    <title>Sample HTML5</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="append-html.js"></script>
+
+<link rel="stylesheet" href="jquery-ui.min.css">
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+<body>
+    <div id="nav-bar-1">
+        <p id="welcome-msg">Welcome, e0001234</p>
+        <a href="#" id="logout-button">Log Out</a>
+
+    </div>
+    <div id="nav-bar-2">
+        <a style="margin-left: 30px">Home</a>
+        <a style="margin-left: 100px">Manage Booking</a>
+    </div>
+    <div class="main-body">
+        <div id="search-box" class="border">
+            <div class="block-header" style="display: inline-flex;">
+                <p>New Booking</p>
+            </div>
+            <div style="margin: 10px">
+                <div id="Facilities/Resources Type">
+                    <div>
+                        <p>Facilities/Resources Type</p>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Please select one facility type</label>
+                            <select class="form-control" id="type-dropdown-list">
+                                <option>Choose a facility type</option>
+                                <option>Study Room</option>
+                                <option>Conference Room</option>
+                                <option>Music Room</option>
+                                <option>Practice Room</option>
+                                <option>Open Space</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="Location">
+                    <p>Location</p>
+                    <div style="height: 60px; overflow: auto;">
+                        <div class="form-group">
+                            <select class="form-control" id="location-dropdown-list">
+                                <option>Choose a location</option>
+                                <option>Any Location</option>
+                                <option>Building A</option>
+                                <option>Building B</option>
+                                <option>Building C</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="Facility/Resource">
+                    <p>Facility/Resource(s)*:</p>
+                    <div style="height: 295px; overflow: auto;">
+                        <!-- <div class="checkbox-list" id="Room-options" style="display: none;">
+                            <script src="createroom.js"></script>
+                            <script> createRooms();</script>
+                        </div> -->
+                        <div class="form-group">
+                            <!-- <label for="exampleFormControlSelect2">Example multiple select</label> -->
+                            <select multiple class="form-control" id="Room-options" style="display: none; height: 275px; overflow: auto;">
+                                <script src="createroom.js"></script>
+                                <script>createRoomsList();</script>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="Date" style="display: inline-flex; padding-top: 10px;">
+                    <p>Date:</p>
+                    <input type="date" id="startDate" style="margin-left: 10px; padding-left: 10px; height: 30px;" />
+                </div>
+                <div></div>
+                <div id="Timing" style="display: inline-flex; margin-top: 20px;">
+
+                    <label for="start-time-select">Available Timing:</label>
+                    <select class="form-control-sm" id="start-time-select" style="width: 80px; margin-left: 5px; padding-left: 5px;">
+                        <option>7:00</option>
+                        <option>8:00</option>
+                        <option>9:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+                        <option>21:00</option>
+                        <option>22:00</option>
+                    </select>
+                    <label style="margin-left: 10px;" for="start-time-select">to:</label>
+                    <select class="form-control-sm" id="end-time-select" style="width: 80px; margin-left: 5px; padding-left: 5px;">
+                        <option>7:00</option>
+                        <option>8:00</option>
+                        <option>9:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+                        <option>21:00</option>
+                        <option>22:00</option>
+                    </select>
+                </div>
+                <div id="search-button">
+                    <a class="btn btn-outline-primary btn" onclick="reviewAnswers(2); return false;">
+                        Search
+                        Availability
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="annoucement border">
+                <div class="block-header" style="display: inline-flex;">
+                    <p>Task Description</p>
+                </div>
+                <div style="display: inline-flex;">
+                    <p> Check if <b>room AP7</b> which is of <b>Practice Room Type</b> and in <b>Building A</b> is free on <b>11th Jan 2020</b> from <b>12:00 to 19:00</b>. </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="logging.js"></script>
+    <script src="test.js"></script>
+    <script src="resource.js"></script>
+
+</body>
+
+</html>
