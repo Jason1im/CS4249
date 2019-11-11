@@ -33,11 +33,14 @@ body {
     overflow: auto;
 }
 #type-dropdown-list > option, #location-dropdown-list > option {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 #Room-options option {
-    font-size: 20px;
+    font-size: 28px;
+}
+.form-control {
+    height: 3rem;   
 }
 
 
